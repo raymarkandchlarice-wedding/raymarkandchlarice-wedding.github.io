@@ -98,7 +98,7 @@ img {
 
 .section-title {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .section-title p {
@@ -449,7 +449,10 @@ img {
       #f7f8f6,
       #eef7fb
     );
+
+  padding-bottom: 100px;
 }
+
 
 /* TIMELINE */
 .timeline {
@@ -644,8 +647,13 @@ img {
 }
 
 /* RSVP */
+.rsvp-section {
+  background: linear-gradient(to bottom, #edf6fa, #f7f8f6);
+}
+
 .rsvp-note {
-  margin: 50px auto;
+  margin: 0px auto;
+  margin-bottom: 30px;
   max-width: 760px;
   text-align: center;
 }
@@ -662,12 +670,11 @@ img {
 }
 
 .rsvp-box {
+  padding-top: 50px;
+  padding-bottom: 10px;
   overflow: hidden;
-
   border-radius: 24px;
-
   border: 1px solid rgba(22, 148, 207, 0.08);
-
   box-shadow: var(--shadow);
 }
 
@@ -998,8 +1005,7 @@ img {
 
 /* WEDDING PARTY */
 .entourage-section {
-  background:
-    linear-gradient(to bottom, #f7f8f6, #eef7fb);
+  background: linear-gradient(to bottom, #edf6fa, #f7f8f6);
 }
 
 .entourage-group:not(:last-child) {
