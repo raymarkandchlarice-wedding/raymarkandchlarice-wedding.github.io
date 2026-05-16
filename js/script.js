@@ -1,16 +1,3 @@
-/* DOM Content Functions */
-const setSocialHashtag = (hashtag) => {
-  const facebook = document.getElementById("facebook-social");
-  const instagram = document.getElementById("instagram-social");
-  const tiktok = document.getElementById("tiktok-social");
-  const x = document.getElementById("x-social");
-
-  facebook.setAttribute("href", `https://www.facebook.com/hashtag/${hashtag}`);
-  instagram.setAttribute("href", `https://www.instagram.com/explore/tags/${hashtag}`);
-  tiktok.setAttribute("href", `https://www.tiktok.com/tag/${hashtag}`);
-  x.setAttribute("href", `https://x.com/hashtag/${hashtag}`);
-}
-
 /* Countdown Functions */
 const getDate = async () => {
   try {
@@ -64,12 +51,8 @@ const updateCountdown = (weddingDate, timeOffset) => {
 
 }
 
-
 /* Run on DOMContentLoaded*/
 document.addEventListener("DOMContentLoaded", async () => {
-
-  /* Load social media hashtags */
-  setSocialHashtag("Philippines");
 
   /* COUNTDOWN TIMER */
   const weddingDate = new Date("May 16, 2026 17:12:00").getTime();
@@ -79,64 +62,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   updateCountdown(weddingDate, timeOffset);
 
 
-  /* MOBILE MENU */
-  const toggle = document.getElementById("menu-toggle");
-  const nav = document.getElementById("nav-links");
-
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
-
-  /* CLOSE MENU ON LINK CLICK */
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("active");
-    });
-  });
-
-
-  /* NAVBAR SCROLL EFFECT */
-  window.addEventListener("scroll", () => {
-
-    const navbar = document.querySelector(".navbar");
-
-    if(window.scrollY > 50){
-      navbar.style.background = "rgba(247,248,246,0.96)";
-      navbar.style.boxShadow = "0 4px 20px rgba(0,0,0,0.05)";
-    }else {
-      navbar.style.background = "rgba(247,248,246,0.90)";
-      navbar.style.boxShadow = "none";
-    }
-
-  });
-
-
-  /* MAP Event Listener */
-  const buttons = document.querySelectorAll(".map-btn");
-  const ceremonyMap = document.getElementById("ceremony-map");
-  const receptionMap = document.getElementById("reception-map");
-
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-
-      const type = btn.dataset.map;
-
-      // update active button
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      // swap full map wrappers
-      ceremonyMap.classList.remove("active-map");
-      receptionMap.classList.remove("active-map");
-
-      if (type === "ceremony") {
-        ceremonyMap.classList.add("active-map");
-      } else {
-        receptionMap.classList.add("active-map");
-      }
-
-    });
-  });
 });
 
 
