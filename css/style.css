@@ -443,7 +443,7 @@
  }
 
  .story-image {
-   min-height: 400px;
+   aspect-ratio: 11 / 8;
    border-radius: var(--radius);
    box-shadow: var(--shadow);
  }
@@ -794,6 +794,7 @@
  }
 
  .reminder-image {
+   aspect-ratio: 11 / 8;
    border-radius: 28px;
    overflow: hidden;
  }
@@ -878,6 +879,7 @@
  }
 
  .gallery-social-image {
+   aspect-ratio: 11 / 8;
    border-radius: 28px;
    overflow: hidden;
    box-shadow: var(--shadow);
