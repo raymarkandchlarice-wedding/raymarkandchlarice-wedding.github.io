@@ -202,6 +202,10 @@ img {
   cursor: pointer;
 }
 
+#home {
+  scroll-margin-top: 50px;
+}
+
 /* HERO */
 .hero {
   position: relative;
@@ -974,16 +978,19 @@ img {
 }
 
 .social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 58px;
   height: 58px;
+  padding: 10px;
 
   border-radius: 50%;
 
   background: white;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 
   color: var(--deep-blue);
 
@@ -1001,6 +1008,154 @@ img {
   background: var(--deep-blue);
 
   color: white;
+}
+
+/* =========================
+   SPOTIFY SECTION
+========================= */
+
+.spotify-section {
+  background: linear-gradient(to bottom, #eef7fb, #f7f8f6);
+}
+
+/* intro text */
+.spotify-intro {
+  max-width: 720px;
+  margin: 0 auto 50px;
+  text-align: center;
+  font-size: 1.05rem;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* main container card */
+.spotify-card {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+
+  padding: 40px;
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(22, 148, 207, 0.12);
+
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spotify-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(10, 98, 143, 0.18);
+}
+
+/* LEFT SIDE (text content) */
+.spotify-info h3 {
+  font-size: 2rem;
+  color: var(--deep-blue);
+  margin-bottom: 8px;
+}
+
+.spotify-info span {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  color: var(--ocean-blue);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.spotify-info p {
+  margin-bottom: 25px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* CTA button */
+.spotify-btn {
+  display: inline-block;
+  padding: 12px 26px;
+
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, var(--soft-blue), var(--deep-blue));
+  color: white;
+
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  transition: all 0.3s ease;
+}
+
+.spotify-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(10, 98, 143, 0.25);
+}
+
+/* RIGHT SIDE (embed) */
+.spotify-embed iframe {
+  width: 100%;
+  height: 352px;
+
+  border: none;
+  border-radius: 18px;
+
+  box-shadow: var(--shadow);
+
+  transition: box-shadow 0.3s ease;
+}
+
+.spotify-embed iframe:hover {
+  box-shadow: 0 18px 40px rgba(10, 98, 143, 0.25);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+  .spotify-card {
+    grid-template-columns: 1fr;
+    padding: 30px;
+    gap: 25px;
+  }
+
+  .spotify-info h3 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .spotify-card {
+    padding: 25px;
+  }
+
+  .spotify-intro {
+    font-size: 1rem;
+  }
+
+  .spotify-embed iframe {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .spotify-card {
+    padding: 20px;
+  }
+
+  .spotify-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .spotify-embed iframe {
+    height: 300px;
+  }
 }
 
 /* WEDDING PARTY */
