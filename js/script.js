@@ -16,12 +16,23 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 });
 
 /* COUNTDOWN TIMER */
-const weddingDate = new Date("June 21, 2026 14:00:00").getTime();
+const weddingDate = new Date("June 21, 2026 00:00:00").getTime();
+const countdownEl = document.querySelector(".countdown");
+const finishedEl = document.querySelector(".countdown-finished");
 
 function updateCountdown() {
 
-  const now = new Date().getTime();
+  const now = Date.now();
   const gap = weddingDate - now;
+
+  if (gap <= 0) {
+    countdownEl.classList.add("hidden");
+    finishedEl.classList.remove("hidden");
+    return;
+  }
+
+  countdownEl.classList.remove("hidden");
+  finishedEl.classList.add("hidden");
 
   const second = 1000;
   const minute = second * 60;
