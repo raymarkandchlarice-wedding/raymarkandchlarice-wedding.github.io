@@ -16,7 +16,7 @@ const initAnimation = () => {
                     opacity: 1,
                     y: 0,
                     scale: 1,
-                    duration: 1,
+                    duration: 0.95,
                     ease: "power3.out",
                     scrollTrigger: {
                         trigger: el,
@@ -51,17 +51,18 @@ const initAnimation = () => {
             toggleActions: "play none none none"
         }
     })
-        .from(".hero-subtitle", { opacity: 0, y: 20, duration: 0.8 })
-        .from(".hero h2", { opacity: 0, y: 20, duration: 0.8 }, "-=0.4")
-        .from(".hero h1", { opacity: 0, y: 40, duration: 1 })
-        .from(".hero-date", { opacity: 0, y: 20, duration: 0.6 }, "-=0.5")
+        .from(".hero-subtitle", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" })
+        .from(".hero h2", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" }, "-=0.4")
+        .from(".hero h1", { opacity: 0, y: 40, duration: 1, ease: "power3.out" })
+        .from(".hero-date", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" }, "-=0.5")
         .from(".countdown .time-box", {
             opacity: 0,
             y: 20,
-            stagger: 0.1,
-            duration: 0.3
-        }, "-=0.3")
-        .from(".countdown-finished", { opacity: 0, y: 20, duration: 0.8 });
+            stagger: 0.15,
+            duration: 1.2,
+            ease: "power3.out"
+        }, "-=0.4")
+        .from(".countdown-finished", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" });
 
 
     // Footer Animation

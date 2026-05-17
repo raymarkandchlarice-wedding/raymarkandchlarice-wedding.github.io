@@ -27,29 +27,27 @@ const preloadImage = (src) => {
 };
 
 const loadGalleryImages = async(maxImages) => {
-  const galleryContainer = document.querySelector('[data-content="gallery-container"]');
+   const galleryContainer = document.querySelector('[data-content="gallery-container"]');
   
-  const imagePromises = Array.from({ length: maxImages }, (_, index) => {
-    const src = `images/gallery/photo_${index + 1}.jpg`;
-    return preloadImage(src)
-      .then(() => src)
-      .catch(() => null);
-  });
+  for(let i = 1; i <= maxImages; i++){
+    const src = `images/gallery/photo_${i}.jpg`;
+    try{
+      await preloadImage(src);
+      const div = document.createElement("div");
+      div.className = "img-box image-frame";
 
-  const loadedImages = await Promise.all(imagePromises);
-  loadedImages.forEach((src) => {
-    if(!src) return;
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "Wedding gallery photo";
 
-    const div = document.createElement("div");
-    div.className = "img-box image-frame";
+      div.appendChild(img);
+      galleryContainer.appendChild(div);
+    }
+    catch(error){
+      break;
+    }
+  }
 
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = "Wedding gallery photo";
-
-    div.appendChild(img);
-    galleryContainer.appendChild(div);
-  });
 }
 
 const normalizeHashtag = (hashtag) => {
