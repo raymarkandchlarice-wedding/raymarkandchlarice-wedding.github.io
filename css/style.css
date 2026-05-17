@@ -451,8 +451,9 @@
 
  @media (max-width: 1070px) {
    .menu-toggle {
-     display: block;
-   }
+    display: block;
+    margin-left: auto;
+  }
 
    .nav-links {
      position: absolute;
