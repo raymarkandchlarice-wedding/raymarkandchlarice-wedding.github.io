@@ -1,5 +1,5 @@
 /* Run on DOMContentLoaded*/
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", async() => {
 
   /* MOBILE MENU */
   const toggle = document.getElementById("menu-toggle");
@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
+  
     /* NAVBAR SCROLL EFFECT */
   window.addEventListener("scroll", () => {
 
@@ -59,5 +60,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     });
   });
+
 
 });

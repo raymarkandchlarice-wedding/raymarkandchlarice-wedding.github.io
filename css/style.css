@@ -115,10 +115,32 @@
    scroll-margin-top: 50px;
  }
 
+ #story,
+ #details,
+ #schedule,
+ #rsvp,
+ #faq,
+ #gallery,
+ #spotify,
+ #entourage {
+   scroll-margin-top: 100px;
+ }
+
  @media (max-width:575.98px) {
 
    #home {
      scroll-margin-top: 40px;
+   }
+
+   #story,
+   #details,
+   #schedule,
+   #rsvp,
+   #faq,
+   #gallery,
+   #spotify,
+   #entourage {
+     scroll-margin-top: 90px;
    }
  }
 

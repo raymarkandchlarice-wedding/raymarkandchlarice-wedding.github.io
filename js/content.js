@@ -149,8 +149,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   /* Reveal Contents */
   document.body.classList.remove("hidden");
-
-  setTimeout(()=>{
-    initAnimation();
-  }, 1000);
+  initAnimation();
 });
