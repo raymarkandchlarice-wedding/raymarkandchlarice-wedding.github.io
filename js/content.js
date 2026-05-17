@@ -37,9 +37,8 @@ const loadGalleryImages = async(maxImages) => {
   });
 
   const loadedImages = await Promise.all(imagePromises);
-
   loadedImages.forEach((src) => {
-    if (!src) return;
+    if(!src) return;
 
     const div = document.createElement("div");
     div.className = "img-box image-frame";
@@ -67,16 +66,13 @@ const setSocialHashtag = (hashtag) => {
   setContentData("social-x", "href", `https://x.com/hashtag/${encodeURIComponent(normalized)}`);
 }
 
-const setWeddingVenue = async(type, venue, image, date, time, location, map) => {
+const setWeddingVenue = (type, venue, date, time, location, map) => {
   const qrAPI = "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=";
   const encodedMap = encodeURIComponent(map);
 
-  //preload image
-  await preloadImage(image);
 
   if(type === "ceremony"){
     setContentData("ceremony-venue", "innerHTML", venue);
-    setContentData("ceremony-image", "src", image);
     setContentData("ceremony-qr", "src", `${qrAPI}${encodedMap}`);
     setContentData("ceremony-date", "innerHTML", date);
     setContentData("ceremony-time", "innerHTML", time);
@@ -87,7 +83,6 @@ const setWeddingVenue = async(type, venue, image, date, time, location, map) => 
 
   if(type === "reception"){
     setContentData("reception-venue", "innerHTML", venue);
-    setContentData("reception-image", "src", image);
     setContentData("reception-qr", "src", `${qrAPI}${encodedMap}`);
     setContentData("reception-date", "innerHTML", date);
     setContentData("reception-time", "innerHTML", time);
@@ -110,7 +105,6 @@ const setSpotifyPlaylist = (playlist) => {
 
 /* Run on DOMContentLoaded*/
 document.addEventListener("DOMContentLoaded", async () => {
-  try {
 
   //Data
   const ceremoneyLocation = "";
@@ -119,19 +113,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   // preload image
 
   /* Wedding Details */
-  await setWeddingVenue(
+  setWeddingVenue(
     "ceremony",
     "St. Mary Church",
-    "images/ceremony_venue.jpg",
     "June 21, 2026",
     "2:00 PM",
     "123 Church Street, City Name",
     "https://www.google.com/maps?q=6.116338,125.171833"
   );
-  await setWeddingVenue(
+  setWeddingVenue(
     "reception",
     "Sunset Garden Hall",
-    "images/reception_venue.jpg",
     "June 21, 2026",
     "6:00 PM",
     "Sunset Avenue, City Name",
@@ -141,22 +133,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   /* RSVP Google Form */
   setRsvpForm("https://docs.google.com/forms/d/e/1FAIpQLSddunQoLP03Ui82aRpaxcbs5qL3nsDoKH2Y2cCFVmnOR7QxIQ/viewform?usp=header");
 
+  /* Load Photo Gallery */
+  await loadGalleryImages(20);
+
   /* Social Media Hashtags */
   setSocialHashtag("ForeverPersonA&PersonB");
-
-  /* Gallery Images */
-  await loadGalleryImages(20); // put image in images/gallery name format photo_{number}.jpg
 
   /* Spotify Playlist */
   setSpotifyPlaylist("https://open.spotify.com/embed/playlist/54ZA9LXFvvFujmOVWXpHga");
 
-  /* Reveal Contents */
-  } catch (error) {
-    console.error("Content initialization error:", error);
-  } finally {
-    document.body.classList.remove("hidden");
-    if (typeof initAnimation === "function") {
-      initAnimation();
-    }
-  }
+
+  document.body.classList.remove("hidden");
+  initAnimation();
+
 });

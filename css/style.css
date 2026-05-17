@@ -156,7 +156,8 @@
  .entourage-card,
  .featured-card,
  .sponsor-item,
- .party-column {
+ .party-column,
+ .spotify-card {
    transition: transform 0.3s ease, box-shadow 0.3s ease;
  }
 
@@ -165,7 +166,8 @@
  .entourage-card:hover,
  .featured-card:hover,
  .sponsor-item:hover,
- .party-column:hover {
+ .party-column:hover,
+ .spotify-card:hover {
    transform: translateY(-6px) !important;
  }
 
