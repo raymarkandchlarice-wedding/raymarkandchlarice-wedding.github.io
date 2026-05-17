@@ -6,13 +6,15 @@ document.addEventListener("DOMContentLoaded", async() => {
   const nav = document.getElementById("nav-links");
 
   toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
+    const isExpanded = nav.classList.toggle("active");
+    toggle.setAttribute("aria-expanded", String(isExpanded));
   });
 
   /* CLOSE MENU ON LINK CLICK */
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
       nav.classList.remove("active");
+      toggle.setAttribute("aria-expanded", "false");
     });
   });
 

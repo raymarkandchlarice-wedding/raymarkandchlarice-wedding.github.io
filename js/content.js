@@ -29,45 +29,47 @@ const preloadImage = (src) => {
 const loadGalleryImages = async(maxImages) => {
   const galleryContainer = document.querySelector('[data-content="gallery-container"]');
   
-  /* place images in gallery */
-  for(let i = 1; i <= maxImages; i++){
-    const src = `images/gallery/photo_${i}.jpg`;
+  const imagePromises = Array.from({ length: maxImages }, (_, index) => {
+    const src = `images/gallery/photo_${index + 1}.jpg`;
+    return preloadImage(src)
+      .then(() => src)
+      .catch(() => null);
+  });
 
-    try{
-      //preload image
-      await preloadImage(src);
+  const loadedImages = await Promise.all(imagePromises);
 
-      //place image to gallery
-      const div = document.createElement("div");
-      div.className = "img-box image-frame";
+  loadedImages.forEach((src) => {
+    if (!src) return;
 
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = "";
+    const div = document.createElement("div");
+    div.className = "img-box image-frame";
 
-      div.appendChild(img);
-      galleryContainer.appendChild(div);
-    } 
-    catch(err) {
-      //break loop on last image photo_{number}.jpg
-      break;
-    }
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = "Wedding gallery photo";
 
-  }
-
+    div.appendChild(img);
+    galleryContainer.appendChild(div);
+  });
 }
 
+const normalizeHashtag = (hashtag) => {
+  const cleaned = hashtag.replace(/[^a-zA-Z0-9]/g, "");
+  return cleaned || "ourwedding";
+};
 
 const setSocialHashtag = (hashtag) => {
-  setContentData("official-hashtag", "innerHTML", `#${hashtag}`);
-  setContentData("social-facebook", "href", `https://www.facebook.com/hashtag/${hashtag}`);
-  setContentData("social-instagram", "href", `https://www.instagram.com/explore/tags/${hashtag}`);
-  setContentData("social-tiktok", "href", `https://www.tiktok.com/tag/${hashtag}`);
-  setContentData("social-x", "href", `https://x.com/hashtag/${hashtag}`);
+  const normalized = normalizeHashtag(hashtag);
+  setContentData("official-hashtag", "innerHTML", `#${normalized}`);
+  setContentData("social-facebook", "href", `https://www.facebook.com/hashtag/${encodeURIComponent(normalized)}`);
+  setContentData("social-instagram", "href", `https://www.instagram.com/explore/tags/${encodeURIComponent(normalized)}`);
+  setContentData("social-tiktok", "href", `https://www.tiktok.com/tag/${encodeURIComponent(normalized)}`);
+  setContentData("social-x", "href", `https://x.com/hashtag/${encodeURIComponent(normalized)}`);
 }
 
 const setWeddingVenue = async(type, venue, image, date, time, location, map) => {
   const qrAPI = "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=";
+  const encodedMap = encodeURIComponent(map);
 
   //preload image
   await preloadImage(image);
@@ -75,7 +77,7 @@ const setWeddingVenue = async(type, venue, image, date, time, location, map) => 
   if(type === "ceremony"){
     setContentData("ceremony-venue", "innerHTML", venue);
     setContentData("ceremony-image", "src", image);
-    setContentData("ceremony-qr", "src", `${qrAPI}${map}`);
+    setContentData("ceremony-qr", "src", `${qrAPI}${encodedMap}`);
     setContentData("ceremony-date", "innerHTML", date);
     setContentData("ceremony-time", "innerHTML", time);
     setContentData("ceremony-location", "innerHTML", location);
@@ -86,7 +88,7 @@ const setWeddingVenue = async(type, venue, image, date, time, location, map) => 
   if(type === "reception"){
     setContentData("reception-venue", "innerHTML", venue);
     setContentData("reception-image", "src", image);
-    setContentData("reception-qr", "src", `${qrAPI}${map}`);
+    setContentData("reception-qr", "src", `${qrAPI}${encodedMap}`);
     setContentData("reception-date", "innerHTML", date);
     setContentData("reception-time", "innerHTML", time);
     setContentData("reception-location", "innerHTML", location);
@@ -108,6 +110,7 @@ const setSpotifyPlaylist = (playlist) => {
 
 /* Run on DOMContentLoaded*/
 document.addEventListener("DOMContentLoaded", async () => {
+  try {
 
   //Data
   const ceremoneyLocation = "";
@@ -148,6 +151,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   setSpotifyPlaylist("https://open.spotify.com/embed/playlist/54ZA9LXFvvFujmOVWXpHga");
 
   /* Reveal Contents */
-  document.body.classList.remove("hidden");
-  initAnimation();
+  } catch (error) {
+    console.error("Content initialization error:", error);
+  } finally {
+    document.body.classList.remove("hidden");
+    if (typeof initAnimation === "function") {
+      initAnimation();
+    }
+  }
 });

@@ -12,6 +12,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/fonts/fonts.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <noscript><style>body.hidden{display:block;}</style></noscript>
   </head>
 
   <body class="hidden">
@@ -19,9 +20,18 @@
     <header class="navbar">
       <a href="#home" class="logo"> PersonA & PersonB </a>
 
-      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        aria-controls="nav-links"
+        aria-expanded="false"
+        aria-label="Toggle navigation menu"
+      >
+        ☰
+      </button>
 
-      <ul class="nav-links" id="nav-links">
+      <nav>
+        <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#story">Story</a></li>
         <li><a href="#details">Details</a></li>
@@ -32,7 +42,10 @@
         <li><a href="#spotify">Spotify</a></li>
         <li><a href="#entourage">Entourage</a></li>
       </ul>
+      </nav>
     </header>
+
+    <main>
 
     <!-- Hero -->
     <section id="home" class="hero">
@@ -174,6 +187,7 @@
               <a
                 href=""
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn"
                 data-content="ceremony-map"
               >
@@ -229,6 +243,7 @@
               <a
                 href=""
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn"
                 data-content="reception-map"
               >
@@ -456,8 +471,9 @@
 
             <div class="social-icons">
               <a
-                href="https://www.instagram.com"
+                href="#"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 data-content="social-instagram"
               >
@@ -465,8 +481,9 @@
               </a>
 
               <a
-                href="https://www.facebook.com"
+                href="#"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 data-content="social-facebook"
               >
@@ -474,8 +491,9 @@
               </a>
 
               <a
-                href="https://www.x.com"
+                href="#"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="X"
                 data-content="social-x"
               >
@@ -483,8 +501,9 @@
               </a>
 
               <a
-                href="https://www.tiktok.com"
+                href="#"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="TikTok"
                 data-content="social-tiktok"
               >
@@ -525,6 +544,7 @@
             <a
               href=""
               target="_blank"
+              rel="noopener noreferrer"
               class="spotify-btn"
               data-content="spotify-playlist-link"
             >
@@ -714,6 +734,8 @@
 
     <!-- Floating RSVP -->
     <a href="#rsvp" class="floating-rsvp"> RSVP </a>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer-hero">
