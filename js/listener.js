@@ -50,9 +50,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       ceremonyMap.classList.remove("active-map");
       receptionMap.classList.remove("active-map");
 
-      if (type === "ceremony") {
+      if(type === "ceremony") {
         ceremonyMap.classList.add("active-map");
-      } else {
+      } 
+      else {
         receptionMap.classList.add("active-map");
       }
 

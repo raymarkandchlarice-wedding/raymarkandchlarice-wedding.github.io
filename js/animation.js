@@ -1,9 +1,9 @@
 /* Run on DOMContentLoaded*/
-document.addEventListener("DOMContentLoaded", async () => {
+const initAnimation = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // GLOBAL REVEAL ANIMATION
-    gsap.utils.toArray(".section, .details-card, .faq-card, .entourage-card, .story-wrapper, .img-box, .reminder-box, .gallery-social, .details-intro, .map-toggle, .map-content, .timeline-item, .featured-card, .rsvp-box, .rsvp-note, .sponsor-item, .party-column, .group-heading, .entourage-card, .spotify-intro, .spotify-card, .story-wrapper")
+    gsap.utils.toArray(".section, .details-card, .faq-card, .story-wrapper, .details-intro, .timeline-item, .map-toggle, .map-content, .reminder-box, .rsvp-box, .rsvp-note, .img-box, .gallery-social, .spotify-intro, .spotify-card, .entourage-card, .group-heading, .sponsor-item, .party-column, .featured-card")
         .forEach((el) => {
             gsap.fromTo(
                 el,
@@ -93,22 +93,22 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
     // Image Zoom-on-Scroll
-    gsap.utils.toArray(".img-box img").forEach((img) => {
-        gsap.fromTo(
-            img,
-            { scale: 1.1 },
-            {
-                scale: 1,
-                duration: 1.5,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: img,
-                    start: "top 90%",
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
-    });
+    // gsap.utils.toArray(".img-box img").forEach((img) => {
+    //     gsap.fromTo(
+    //         img,
+    //         { scale: 1.1 },
+    //         {
+    //             scale: 1,
+    //             duration: 1.5,
+    //             ease: "power2.out",
+    //             scrollTrigger: {
+    //                 trigger: img,
+    //                 start: "top 90%",
+    //                 toggleActions: "play none none reverse"
+    //             }
+    //         }
+    //     );
+    // });
 
 
     // Floating Subtle Parallax (Hero)
@@ -122,4 +122,4 @@ document.addEventListener("DOMContentLoaded", async () => {
             scrub: true
         }
     });
-});
+}

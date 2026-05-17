@@ -176,6 +176,7 @@
                 target="_blank"
                 class="btn"
                 data-content="ceremony-map"
+                loading="lazy"
               >
                 Open in Google Maps
               </a>
@@ -251,20 +252,29 @@
         <!-- TOGGLE BUTTONS -->
         <div class="map-toggle">
           <button class="map-btn active" data-map="ceremony">Ceremony</button>
-
           <button class="map-btn" data-map="reception">Reception</button>
         </div>
 
         <div class="map-content">
           <!-- CEREMONY MAP WRAPPER -->
-          <div class="map-wrapper active-map">
-            <iframe src="" allowfullscreen data-content="ceremony-map-embed">
+          <div id="ceremony-map" class="map-wrapper active-map">
+            <iframe
+              src=""
+              allowfullscreen
+              loading="lazy"
+              data-content="ceremony-map-embed"
+            >
             </iframe>
           </div>
 
           <!-- RECEPTION MAP WRAPPER -->
-          <div class="map-wrapper">
-            <iframe src="" allowfullscreen data-content="reception-map-embed">
+          <div id="reception-map" class="map-wrapper">
+            <iframe
+              src=""
+              allowfullscreen
+              loading="lazy"
+              data-content="reception-map-embed"
+            >
             </iframe>
           </div>
         </div>
@@ -337,6 +347,7 @@
             width="100%"
             height="650"
             frameborder="0"
+            loading="lazy"
             data-content="rsvp-form"
           >
           </iframe>
@@ -532,6 +543,7 @@
                 fullscreen;
                 picture-in-picture;
               "
+              loading="lazy"
               data-content="spotify-playlist"
             >
             </iframe>
@@ -718,16 +730,15 @@
       </div>
     </footer>
 
-    <!-- Libraries -->
+    <!-- Animation Scripts -->
     <script src="js/libs/gsap.min.js" defer></script>
     <script src="js/libs/scrollTrigger.min.js" defer></script>
+    <script src="js/animation.js" defer></script>
 
     <!-- Main Scripts -->
     <script src="js/content.js" defer></script>
     <script src="js/script.js" defer></script>
     <script src="js/listener.js" defer></script>
 
-    <!-- Animation Scripts -->
-    <script src="js/animation.js" defer></script>
   </body>
 </html>

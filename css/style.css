@@ -121,15 +121,19 @@
  .details-card,
  .faq-card,
  .entourage-card,
- .img-box {
+ .featured-card,
+ .sponsor-item,
+ .party-column {
    transition: transform 0.3s ease, box-shadow 0.3s ease;
  }
 
  .details-card:hover,
  .faq-card:hover,
  .entourage-card:hover,
- .img-box:hover {
-   transform: translateY(-6px);
+ .featured-card:hover,
+ .sponsor-item:hover,
+ .party-column:hover {
+   transform: translateY(-6px) !important;
  }
 
  /* NAVBAR */
@@ -487,7 +491,7 @@
  }
 
  .story-image:hover img {
-   transform: scale(1.05);
+   transform: scale(1.05) !important;
  }
 
  .story-text h3 {
@@ -539,10 +543,6 @@
    transition: 0.3s ease;
  }
 
- .details-card:hover {
-   transform: translateY(-6px);
- }
-
  .details-image {
    position: relative;
    aspect-ratio: 16 / 10;
@@ -557,7 +557,7 @@
  }
 
  .details-card:hover .details-image img {
-   transform: scale(1.05);
+   transform: scale(1.05) !important;
  }
 
  .details-qr {
@@ -683,7 +683,7 @@
  }
 
  .map-btn:hover {
-   transform: translateY(-2px);
+   transform: translateY(-2px) !important;
  }
 
  .map-btn.active {
@@ -699,7 +699,7 @@
    overflow: hidden;
    box-shadow: var(--shadow);
    opacity: 0;
-   transform: translateY(10px);
+   transform: translateY(10px) !important;
    transition: 0.35s ease;
    pointer-events: none;
  }
@@ -707,7 +707,7 @@
  .map-wrapper.active-map {
    display: block;
    opacity: 1;
-   transform: translateY(0);
+   transform: translateY(0) !important;
    pointer-events: auto;
  }
 
@@ -906,7 +906,7 @@
  }
 
  .img-box:hover img {
-   transform: scale(1.05);
+   transform: scale(1.05) !important;
  }
 
  @media (max-width: 991.98px) {
@@ -939,7 +939,7 @@
  }
 
  .gallery-social-image:hover img {
-   transform: scale(1.05);
+   transform: scale(1.05) !important;
  }
 
  .gallery-tag {
@@ -972,6 +972,13 @@
    font-weight: 700;
    font-size: 1rem;
    letter-spacing: 1px;
+   transition: 0.3s ease;
+ }
+
+ .hashtag:hover {
+   transform: translateY(-4px) !important;
+   background: var(--deep-blue);
+   color: white;
  }
 
  .social-icons {
@@ -996,7 +1003,7 @@
  }
 
  .social-icons a:hover {
-   transform: translateY(-4px);
+   transform: translateY(-4px) !important;
    background: var(--deep-blue);
    color: white;
  }
@@ -1036,7 +1043,7 @@
  }
 
  .spotify-card:hover {
-   transform: translateY(-6px);
+   transform: translateY(-6px) !important;
    box-shadow: 0 18px 45px rgba(10, 98, 143, 0.18);
  }
 
@@ -1075,7 +1082,7 @@
  }
 
  .spotify-btn:hover {
-   transform: translateY(-3px);
+   transform: translateY(-3px) !important;
    box-shadow: 0 12px 30px rgba(10, 98, 143, 0.25);
  }
 

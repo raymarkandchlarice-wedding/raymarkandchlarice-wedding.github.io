@@ -48,7 +48,8 @@ const loadGalleryImages = async(maxImages) => {
       div.appendChild(img);
       galleryContainer.appendChild(div);
     } 
-    catch (err) {
+    catch(err) {
+      //break loop on last image photo_{number}.jpg
       break;
     }
 
@@ -65,8 +66,11 @@ const setSocialHashtag = (hashtag) => {
   setContentData("social-x", "href", `https://x.com/hashtag/${hashtag}`);
 }
 
-const setWeddingVenue = (type, venue, image, date, time, location, map) => {
+const setWeddingVenue = async(type, venue, image, date, time, location, map) => {
   const qrAPI = "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=";
+
+  //preload image
+  await preloadImage(image);
 
   if(type === "ceremony"){
     setContentData("ceremony-venue", "innerHTML", venue);
@@ -110,13 +114,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const receptionLocation = "";
 
   // preload image
-  await Promise.all([
-    preloadImage("images/ceremony_venue.jpg"),
-    preloadImage("images/reception_venue.jpg"),
-  ]);
 
   /* Wedding Details */
-  setWeddingVenue(
+  await setWeddingVenue(
     "ceremony",
     "St. Mary Church",
     "images/ceremony_venue.jpg",
@@ -125,14 +125,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     "123 Church Street, City Name",
     "https://www.google.com/maps?q=6.116338,125.171833"
   );
-  setWeddingVenue(
+  await setWeddingVenue(
     "reception",
     "Sunset Garden Hall",
     "images/reception_venue.jpg",
     "June 21, 2026",
     "6:00 PM",
     "Sunset Avenue, City Name",
-    "https://www.google.com/maps?q=6.116338,125.171833"
+    "https://www.google.com/maps?q=6.116117402370895,125.18710124287222"
   );
 
   /* RSVP Google Form */
@@ -142,11 +142,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   setSocialHashtag("ForeverPersonA&PersonB");
 
   /* Gallery Images */
-  loadGalleryImages(20); // put image in images/gallery name format photo_{number}.jpg
+  await loadGalleryImages(20); // put image in images/gallery name format photo_{number}.jpg
 
   /* Spotify Playlist */
   setSpotifyPlaylist("https://open.spotify.com/embed/playlist/54ZA9LXFvvFujmOVWXpHga");
 
   /* Reveal Contents */
   document.body.classList.remove("hidden");
+  initAnimation();
 });
