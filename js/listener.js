@@ -96,6 +96,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });
 
+  // prevent iframe autofocus
+  const iframe = document.querySelectorAll("iframe");
+  iframe.forEach(frame => {
+    frame.addEventListener("load", () => {
+      frame.blur();
+      document.body.focus();
+    })
+  });
+
   updateNoMarginScroll();
 
 });
