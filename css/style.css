@@ -372,7 +372,7 @@
 
  @media (max-width: 575.98px) {
     .hero {
-      padding-top: 80px;
+      /* padding-top: 80px; */
       align-items: start;
     }
 
