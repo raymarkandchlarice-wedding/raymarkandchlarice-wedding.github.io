@@ -13,25 +13,53 @@ Website GUIDE
 11. Contact Information
 12. Footer
 
-
 Optimize Image
 https://squoosh.app/
 
 
+   <!-- Schedule Timeline Template -->
+    <!-- <div class="timeline-item">
+      <div class="timeline-time">2:00 PM</div>
+
+      <div class="timeline-content">
+        <h3>Ceremony</h3>
+        <p>A meaningful ceremony surrounded by our closest family and friends.</p>
+      </div>
+    </div> -->
+
+    <!-- FAQ Template -->
+      <!-- <div class="faq-card">
+        <h3>What should I wear?</h3>
+        <p>Dress code is semi-formal: polished, elegant, and comfortable.</p>
+      </div> -->
 
 
-  // const pageSections = document.querySelectorAll('.section[id]');
-  // const updateNoMarginScroll = () => {
-  //   const currentScroll = window.scrollY;
+      <!-- Gallery Template -->
+      <!-- <div class="img-box image-frame">
+        <img
+          src="images/gallery/photo_1.jpg"
+          alt=""
+        />
+      </div> -->
 
-  //   pageSections.forEach(section => {
-  //     const sectionTop = section.offsetTop;
+      <!-- Principal Sponsor List Template -->
+      <!-- <div class="sponsor-item">Mr. Antonio Cruz & Mrs. Elena Cruz</div> -->
 
-  //     // no-margin-scroll on section pass the current scroll
-  //     if(currentScroll > sectionTop) {
-  //       section.classList.add('no-margin-scroll');
-  //     } else {
-  //       section.classList.remove('no-margin-scroll');
-  //     }
-  //   });
-  // };
+      <!-- BestMan/MaidOfHonor Template -->
+      <div class="party-item">Adrian Lim</div>
+
+// const pageSections = document.querySelectorAll('.section[id]');
+// const updateNoMarginScroll = () => {
+// const currentScroll = window.scrollY;
+
+// pageSections.forEach(section => {
+// const sectionTop = section.offsetTop;
+
+// // no-margin-scroll on section pass the current scroll
+// if(currentScroll > sectionTop) {
+// section.classList.add('no-margin-scroll');
+// } else {
+// section.classList.remove('no-margin-scroll');
+// }
+// });
+// };

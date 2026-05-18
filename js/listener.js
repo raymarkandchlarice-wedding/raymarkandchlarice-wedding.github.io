@@ -1,5 +1,5 @@
 /* Run on DOMContentLoaded*/
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", async() => {
 
   /* MOBILE MENU */
   const toggle = document.getElementById("menu-toggle");

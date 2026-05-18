@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>PersonA & PersonB Wedding</title>
+    <title>Wedding</title>
 
     <!-- Icon -->
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
@@ -17,7 +17,10 @@
   <body class="hidden">
     <!-- Navigation -->
     <header class="navbar">
-      <a href="#home" class="logo"> PersonA & PersonB </a>
+      <a href="#home" class="logo">
+        <span data-content="wedding-groom"></span> &
+        <span data-content="wedding-bride"></span>
+      </a>
 
       <button
         class="menu-toggle"
@@ -31,16 +34,16 @@
 
       <nav>
         <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#story">Story</a></li>
-        <li><a href="#details">Details</a></li>
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#rsvp">RSVP</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#spotify">Spotify</a></li>
-        <li><a href="#entourage">Entourage</a></li>
-      </ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#story">Story</a></li>
+          <li><a href="#details">Details</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#rsvp">RSVP</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#spotify">Spotify</a></li>
+          <li><a href="#entourage">Entourage</a></li>
+        </ul>
       </nav>
     </header>
 
@@ -51,9 +54,12 @@
 
         <h2>We invite you to celebrate with us</h2>
 
-        <h1>PersonA & PersonB</h1>
+        <h1>
+          <span data-content="wedding-groom"></span> &
+          <span data-content="wedding-bride"></span>
+        </h1>
 
-        <p class="hero-date">June 21, 2026</p>
+        <p class="hero-date" data-content="wedding-date"></p>
 
         <div class="countdown">
           <div class="time-box">
@@ -105,7 +111,10 @@
           </div>
 
           <div class="story-text">
-            <h3>PersonA & PersonB</h3>
+            <h3>
+              <span data-content="wedding-groom"></span> &
+              <span data-content="wedding-bride"></span>
+            </h3>
 
             <p>
               What began as a chance meeting became a journey filled with quiet
@@ -270,21 +279,13 @@
         <div class="map-content">
           <!-- CEREMONY MAP WRAPPER -->
           <div id="ceremony-map" class="map-wrapper active-map">
-            <iframe
-              src=""
-              allowfullscreen
-              data-content="ceremony-map-embed"
-            >
+            <iframe src="" allowfullscreen data-content="ceremony-map-embed">
             </iframe>
           </div>
 
           <!-- RECEPTION MAP WRAPPER -->
           <div id="reception-map" class="map-wrapper">
-            <iframe
-              src=""
-              allowfullscreen
-              data-content="reception-map-embed"
-            >
+            <iframe src="" allowfullscreen data-content="reception-map-embed">
             </iframe>
           </div>
         </div>
@@ -299,33 +300,9 @@
           <h2>Event Schedule</h2>
         </div>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-time">2:00 PM</div>
+        <div class="timeline" data-content="schedule-container">
+            <!-- Generate Schedule -->
 
-            <div class="timeline-content">
-              <h3>Ceremony</h3>
-              <p>A meaningful ceremony surrounded by our closest family and friends.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-time">4:00 PM</div>
-
-            <div class="timeline-content">
-              <h3>Cocktail Hour</h3>
-              <p>A relaxed gathering with drinks, light bites, and time to connect.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-time">6:00 PM</div>
-
-            <div class="timeline-content">
-              <h3>Reception</h3>
-              <p>An evening of dinner, heartfelt speeches, and joyful celebration.</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -342,13 +319,19 @@
           <h3>Your presence completes our celebration</h3>
 
           <p>
-            We are so grateful to share this day with the people who bring meaning
-            and joy to our lives.
+            We are so grateful to share this day with the people who bring
+            meaning and joy to our lives.
           </p>
 
-          <p>Please let us know if you will join us by completing the RSVP form below.</p>
+          <p>
+            Please let us know if you will join us by completing the RSVP form
+            below.
+          </p>
 
-          <p class="rsvp-deadline">Kindly respond on or before May 25, 2026.</p>
+          <p class="rsvp-deadline">
+            Kindly respond on or before
+            <span data-content="rsvp-deadline"></span>
+          </p>
         </div>
 
         <div class="rsvp-box">
@@ -373,36 +356,9 @@
           <h2>Frequently Asked Questions</h2>
         </div>
 
-        <div class="faq-grid">
-          <div class="faq-card">
-            <h3>What should I wear?</h3>
-            <p>Dress code is semi-formal: polished, elegant, and comfortable.</p>
-          </div>
+        <div class="faq-grid" data-content="faq-container">
+          <!-- Generate Faq -->
 
-          <div class="faq-card">
-            <h3>Can I bring a plus one?</h3>
-            <p>Please bring the guest named on your invitation.</p>
-          </div>
-
-          <div class="faq-card">
-            <h3>Is parking available?</h3>
-            <p>Yes, parking is available at both venues.</p>
-          </div>
-
-          <div class="faq-card">
-            <h3>Will food be served?</h3>
-            <p>Yes, a full dinner and refreshments will be provided.</p>
-          </div>
-
-          <div class="faq-card">
-            <h3>Can I take photos?</h3>
-            <p>Please feel free to capture moments with care and respect.</p>
-          </div>
-
-          <div class="faq-card">
-            <h3>What time should I arrive?</h3>
-            <p>Please arrive 30 minutes early so we can begin together.</p>
-          </div>
         </div>
 
         <div class="reminder-box">
@@ -416,8 +372,8 @@
             <h3>Your presence is our greatest gift</h3>
 
             <p>
-              We are grateful for every smile, every warm wish, and the memories we
-              will create together.
+              We are grateful for every smile, every warm wish, and the memories
+              we will create together.
             </p>
 
             <p>
@@ -437,14 +393,7 @@
         </div>
 
         <div class="gallery" data-content="gallery-container">
-
-          <!-- Template -->
-          <!-- <div class="img-box image-frame">
-            <img
-              src="images/gallery/photo_1.jpg"
-              alt=""
-            />
-          </div> -->
+           <!-- Generate Gallery -->
 
         </div>
 
@@ -460,13 +409,13 @@
             <h3>Capture the moments with us</h3>
 
             <p>
-              Every smile, candid laugh, and cherished memory becomes part of the
-              story we will carry forward together.
+              Every smile, candid laugh, and cherished memory becomes part of
+              the story we will carry forward together.
             </p>
 
             <p>
-              Share your favorite wedding day photos and videos using our official
-              hashtag so we can celebrate them with you.
+              Share your favorite wedding day photos and videos using our
+              official hashtag so we can celebrate them with you.
             </p>
 
             <div class="hashtag" data-content="official-hashtag">#</div>
@@ -534,14 +483,17 @@
         <div class="spotify-card">
           <!-- LEFT SIDE INFO -->
           <div class="spotify-info">
-            <h3>PersonA & PersonB</h3>
+            <h3>
+              <span data-content="wedding-groom"></span> &
+              <span data-content="wedding-bride"></span>
+            </h3>
 
             <span>Official Wedding Playlist</span>
 
             <p>
-              A curated selection of songs that have marked our journey together.
-              Listen now, save it for the celebration, and carry our wedding music
-              with you long after the day ends.
+              A curated selection of songs that have marked our journey
+              together. Listen now, save it for the celebration, and carry our
+              wedding music with you long after the day ends.
             </p>
 
             <a
@@ -583,8 +535,21 @@
           <h2>The Entourage</h2>
         </div>
 
-        <!-- Couple -->
+        <!-- Ceremony Official -->
+        <div class="entourage-group">
+          <div class="group-heading">
+            <span>Ceremony Official</span>
+          </div>
 
+          <div class="officiating-grid">
+            <div class="entourage-card">
+              <small>Officiating Minister</small>
+              <h3 data-content="ceremony-official"></h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Couple -->
         <div class="entourage-group">
           <div class="group-heading">
             <span>The Couple</span>
@@ -593,37 +558,33 @@
           <div class="couple-grid">
             <div class="featured-card">
               <small>The Groom</small>
-              <h3>PersonA</h3>
+              <h3 data-content="wedding-groom"></h3>
             </div>
 
             <div class="featured-card">
               <small>The Bride</small>
-              <h3>PersonB</h3>
+              <h3 data-content="wedding-bride"></h3>
             </div>
           </div>
         </div>
 
-        <!-- Family & Ceremony -->
-
+        <!-- Couple's Family-->
         <div class="entourage-group">
           <div class="group-heading">
-            <span>Family & Ceremony</span>
+            <span>Couple's Family</span>
           </div>
 
           <div class="family-grid">
             <div class="entourage-card">
-              <small>Officiating Minister</small>
-              <h3>Pastor Michael Reyes</h3>
-            </div>
-
-            <div class="entourage-card">
               <small>Groom’s Parents</small>
-              <h3>Mr. & Mrs. Santos</h3>
+              <h3 data-content="groom-father"></h3>
+              <h3 data-content="groom-mother"></h3>
             </div>
 
             <div class="entourage-card">
               <small>Bride’s Parents</small>
-              <h3>Mr. & Mrs. Lim</h3>
+              <h3 data-content="bride-father"></h3>
+              <h3 data-content="bride-mother"></h3>
             </div>
           </div>
         </div>
@@ -634,27 +595,13 @@
             <span>Principal Sponsors</span>
           </div>
 
-          <div class="sponsors-list">
-            <div class="sponsor-item">Mr. Antonio Cruz & Mrs. Elena Cruz</div>
+          <div class="sponsors-list" data-content="sponsors-list">
+            <!-- Generate Sponsor List -->
 
-            <div class="sponsor-item">
-              Mr. Rafael Garcia & Mrs. Sofia Garcia
-            </div>
-
-            <div class="sponsor-item">Mr. Daniel Reyes & Mrs. Angela Reyes</div>
-
-            <div class="sponsor-item">Mr. Vincent Lim & Mrs. Patricia Lim</div>
-
-            <div class="sponsor-item">Mr. Joseph Tan & Mrs. Monica Tan</div>
-
-            <div class="sponsor-item">
-              Mr. Adrian Flores & Mrs. Camille Flores
-            </div>
           </div>
         </div>
 
         <!-- Wedding Party -->
-
         <div class="entourage-group">
           <div class="group-heading">
             <span>The Wedding Party</span>
@@ -664,43 +611,37 @@
             <div class="party-column">
               <div class="party-highlight">
                 <small>Best Man</small>
-                <h3>Michael Reyes</h3>
+                <h3 data-content="best-man"></h3>
               </div>
 
-              <div class="party-list">
-                <div class="party-item">Daniel Cruz</div>
+              <div class="party-list" data-content="groomsman">
+                <!-- Generate Groomsman -->
 
-                <div class="party-item">Joshua Santos</div>
-
-                <div class="party-item">Adrian Lim</div>
               </div>
             </div>
 
             <div class="party-column">
               <div class="party-highlight">
                 <small>Maid of Honor</small>
-                <h3>Angela Santos</h3>
+                <h3 data-content="maid-of-honor"></h3>
               </div>
 
-              <div class="party-list">
-                <div class="party-item">Sophia Lim</div>
+              <div class="party-list" data-content="bridesmaid">
+                <!-- Generate Bridesmaid -->
 
-                <div class="party-item">Camille Reyes</div>
-
-                <div class="party-item">Nicole Tan</div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- Ceremony Sponsors -->
-
         <div class="entourage-group">
           <div class="group-heading">
             <span>Ceremony Sponsors</span>
           </div>
 
           <div class="ceremony-grid">
+
             <div class="entourage-card">
               <small>Candle</small>
               <h3>John & Anne</h3>
@@ -719,6 +660,7 @@
             <div class="entourage-card">
               <small>Ring Bearer</small>
               <h3>Ethan Cruz</h3>
+              <h3>Ethan Cruz</h3>
             </div>
 
             <div class="entourage-card">
@@ -730,6 +672,7 @@
               <small>Coin Bearer</small>
               <h3>Noah Santos</h3>
             </div>
+
           </div>
         </div>
       </div>
@@ -738,17 +681,20 @@
     <!-- Floating RSVP -->
     <a href="#rsvp" class="floating-rsvp"> RSVP </a>
 
-
     <!-- Footer -->
     <footer class="footer-hero">
       <div class="footer-content">
         <h2 class="footer-signature">See You There</h2>
 
-        <h1 class="footer-names">PersonA & PersonB</h1>
+        <h1 class="footer-names">
+          <span data-content="wedding-groom"></span> &
+          <span data-content="wedding-bride"></span>
+        </h1>
 
         <p class="footer-date">
-          <span>06</span> · <span>21</span> ·
-          <span>26</span>
+          <span data-content="wedding-month"></span> ·
+          <span data-content="wedding-day"></span> ·
+          <span data-content="wedding-year"></span>
           <span>💍</span>
         </p>
       </div>
@@ -763,6 +709,5 @@
     <script src="js/script.js?v=1.0.3" defer></script>
     <script src="js/listener.js?v=1.0.3" defer></script>
     <script src="js/content.js?v=1.0.3" defer></script>
-
   </body>
 </html>

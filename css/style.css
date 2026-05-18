@@ -1184,6 +1184,7 @@
  }
 
  .couple-grid,
+ .officiating-grid,
  .family-grid,
  .ceremony-grid {
    display: grid;
@@ -1219,8 +1220,16 @@
    color: var(--deep-blue);
  }
 
+ .officiating-grid {
+   max-width: 440px;
+   grid-template-columns: 1fr;
+   margin: auto;
+ }
+
  .family-grid {
-   grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
+   grid-template-columns: repeat(2, 1fr);
+   margin: auto;
  }
 
  .entourage-card {
@@ -1316,7 +1325,6 @@
 
  @media (max-width: 991.98px) {
 
-   .family-grid,
    .ceremony-grid,
    .gallery,
    .faq-grid,
