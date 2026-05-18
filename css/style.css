@@ -118,12 +118,12 @@
  @media (max-width:575.98px) {
 
    #home {
-     scroll-margin-top: 70px;
+     scroll-margin-top: 0px;
    }
  }
 
-  .no-margin-scroll {
-  scroll-margin-top: 0px !important;
+ .no-margin-scroll {
+   scroll-margin-top: 0px !important;
  }
 
  /* Animation Base CSS */
@@ -460,9 +460,9 @@
 
  @media (max-width: 575.98px) {
 
-    .countdown .time-box:nth-last-child(1) {
-      display: none;
-    }
+   .countdown .time-box:nth-last-child(1) {
+     display: none;
+   }
 
    .hero h1 {
      font-size: 2.5rem;
