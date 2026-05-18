@@ -116,10 +116,6 @@ const setSpotifyPlaylist = (playlist) => {
 /* Run on DOMContentLoaded*/
 document.addEventListener("DOMContentLoaded", async() => {
 
-  //Data
-  const ceremoneyLocation = "";
-  const receptionLocation = "";
-
   // image cache version
   recacheImages("51820261");
 

@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   /* NAVBAR SCROLL EFFECT */
   window.addEventListener("scroll", () => {
-    updateNoMarginScroll();
+    // updateNoMarginScroll();
 
     const navbar = document.querySelector(".navbar");
 
-    if (window.scrollY > 50) {
+    if(window.scrollY > 50) {
       navbar.style.background = "rgba(247,248,246,0.96)";
       navbar.style.boxShadow = "0 4px 20px rgba(0,0,0,0.05)";
     } else {
