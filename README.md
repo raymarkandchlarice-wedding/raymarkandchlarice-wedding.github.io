@@ -16,3 +16,22 @@ Website GUIDE
 
 Optimize Image
 https://squoosh.app/
+
+
+
+
+  // const pageSections = document.querySelectorAll('.section[id]');
+  // const updateNoMarginScroll = () => {
+  //   const currentScroll = window.scrollY;
+
+  //   pageSections.forEach(section => {
+  //     const sectionTop = section.offsetTop;
+
+  //     // no-margin-scroll on section pass the current scroll
+  //     if(currentScroll > sectionTop) {
+  //       section.classList.add('no-margin-scroll');
+  //     } else {
+  //       section.classList.remove('no-margin-scroll');
+  //     }
+  //   });
+  // };

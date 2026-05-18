@@ -10,22 +10,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     toggle.setAttribute("aria-expanded", String(isExpanded));
   });
 
-  // const pageSections = document.querySelectorAll('.section[id]');
-  // const updateNoMarginScroll = () => {
-  //   const currentScroll = window.scrollY;
-
-  //   pageSections.forEach(section => {
-  //     const sectionTop = section.offsetTop;
-
-  //     // no-margin-scroll on section pass the current scroll
-  //     if(currentScroll > sectionTop) {
-  //       section.classList.add('no-margin-scroll');
-  //     } else {
-  //       section.classList.remove('no-margin-scroll');
-  //     }
-  //   });
-  // };
-
   /* Navigation Listener */
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", (event) => {
@@ -46,14 +30,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         block: 'start'
       });
 
-      // updateNoMarginScroll();
     });
   });
 
 
   /* NAVBAR SCROLL EFFECT */
   window.addEventListener("scroll", () => {
-    // updateNoMarginScroll();
 
     const navbar = document.querySelector(".navbar");
 
@@ -95,7 +77,5 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     });
   });
-
-  // updateNoMarginScroll();
 
 });
