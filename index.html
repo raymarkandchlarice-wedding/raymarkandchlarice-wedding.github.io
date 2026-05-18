@@ -185,7 +185,7 @@
                 </div>
 
                 <div class="details-item">
-                  <strong>Location</strong>
+                  <strong>Address</strong>
 
                   <span data-content="ceremony-location"></span>
                 </div>
@@ -241,7 +241,7 @@
                 </div>
 
                 <div class="details-item">
-                  <strong>Location</strong>
+                  <strong>Address</strong>
 
                   <span data-content="reception-location"></span>
                 </div>
@@ -608,13 +608,14 @@
           </div>
 
           <div class="party-grid">
+
             <div class="party-column">
               <div class="party-highlight">
                 <small>Best Man</small>
-                <h3 data-content="best-man"></h3>
+                <h3 data-content="best-man-main"></h3>
               </div>
 
-              <div class="party-list" data-content="groomsman">
+              <div class="party-list" data-content="best-man-attendant">
                 <!-- Generate Groomsman -->
 
               </div>
@@ -623,14 +624,15 @@
             <div class="party-column">
               <div class="party-highlight">
                 <small>Maid of Honor</small>
-                <h3 data-content="maid-of-honor"></h3>
+                <h3 data-content="maid-of-honor-main"></h3>
               </div>
 
-              <div class="party-list" data-content="bridesmaid">
+              <div class="party-list" data-content="maid-of-honor-attendant">
                 <!-- Generate Bridesmaid -->
 
               </div>
             </div>
+
           </div>
         </div>
 
@@ -640,40 +642,11 @@
             <span>Ceremony Sponsors</span>
           </div>
 
-          <div class="ceremony-grid">
-
-            <div class="entourage-card">
-              <small>Candle</small>
-              <h3>John & Anne</h3>
-            </div>
-
-            <div class="entourage-card">
-              <small>Cord</small>
-              <h3>David & Maria</h3>
-            </div>
-
-            <div class="entourage-card">
-              <small>Veil</small>
-              <h3>Mark & Julia</h3>
-            </div>
-
-            <div class="entourage-card">
-              <small>Ring Bearer</small>
-              <h3>Ethan Cruz</h3>
-              <h3>Ethan Cruz</h3>
-            </div>
-
-            <div class="entourage-card">
-              <small>Bible Bearer</small>
-              <h3>Lucas Reyes</h3>
-            </div>
-
-            <div class="entourage-card">
-              <small>Coin Bearer</small>
-              <h3>Noah Santos</h3>
-            </div>
-
+          <div class="ceremony-grid" data-content="ceremony-sponsors">
+            <!-- Generate Ceremony Sponsors  -->
+      
           </div>
+
         </div>
       </div>
     </section>

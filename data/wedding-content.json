@@ -1,0 +1,149 @@
+{
+  "bride": "Isabella",
+  "groom": "Nathan",
+  "officiant": "Pastor Michael R. Santos",
+  "hashtag": "#NathanAndIsabella2026",
+  "weddingDate": "05/19/2026",
+  "rsvpDeadline": "05/26/2026",
+
+  "spotifyUrl": "https://open.spotify.com/embed/playlist/54ZA9LXFvvFujmOVWXpHga",
+  "rsvpFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSddunQoLP03Ui82aRpaxcbs5qL3nsDoKH2Y2cCFVmnOR7QxIQ/viewform?usp=header",
+
+  "family": {
+    "bride": {
+      "father": "Mr. Antonio C. Cruz",
+      "mother": "Mrs. Elena C. Cruz"
+    },
+    "groom": {
+      "father": "Mr. Roberto B. Delgado",
+      "mother": "Mrs. Maria L. Delgado"
+    }
+  },
+
+  "venue": [
+    {
+      "type": "ceremony",
+      "name": "St. Mary Church",
+      "date": "June 21, 2026",
+      "time": "2:00 PM",
+      "address": "123 Church Street, City Name",
+      "map": "https://www.google.com/maps?q=6.116338,125.171833"
+    },
+    {
+      "type": "reception",
+      "name": "Sunset Garden Hall",
+      "date": "June 21, 2026",
+      "time": "6:00 PM",
+      "address": "Sunset Avenue, City Name",
+      "map": "https://www.google.com/maps?q=6.116117402370895,125.18710124287222"
+    }
+  ],
+
+  "schedule": [
+    {
+      "title": "Ceremony",
+      "time": "2:00 PM",
+      "details": "A meaningful ceremony surrounded by our closest family and friends."
+    },
+    {
+      "title": "Cocktail Hour",
+      "time": "4:00 PM",
+      "details": "A relaxed gathering with drinks, light bites, and time to connect."
+    },
+    {
+      "title": "Reception",
+      "time": "6:00 PM",
+      "details": "An evening of dinner, heartfelt speeches, and joyful celebration."
+    }
+  ],
+
+  "faq": [
+    {
+      "question": "What should I wear?",
+      "answer": "Dress code is semi-formal: polished, elegant, and comfortable."
+    },
+    {
+      "question": "Can I bring a plus one?",
+      "answer": "Please bring the guest named on your invitation."
+    },
+    {
+      "question": "Is parking available?",
+      "answer": "Yes, parking is available at both venues."
+    },
+    {
+      "question": "Will food be served?",
+      "answer": "Yes, a full dinner and refreshments will be provided."
+    },
+    {
+      "question": "Can I take photos?",
+      "answer": "Please feel free to capture moments with care and respect."
+    },
+    {
+      "question": "What time should I arrive?",
+      "answer": "Please arrive 30 minutes early so we can begin together."
+    }
+  ],
+
+  "sponsors": {
+    "principal": [
+      "Mr. Daniel A. Reyes",
+      "Ms. Sophia B. Martinez",
+      "Mr. Ethan A. Walker",
+      "Mrs. Isabella A. Cruz",
+      "Mr. Noah B. Bennett",
+      "Ms. Charlotte F. Flores",
+      "Mr. Liam A. Foster",
+      "Mrs. Amelia A. Garcia",
+      "Mr. Benjamin A. Hayes",
+      "Ms. Mia A. Collins",
+      "Mr. Lucas A. Brooks",
+      "Mrs. Evelyn A. Turner"
+    ],
+
+    "ceremony": [
+      {
+        "role": "Candle",
+        "people": ["Mr. Adrian A. Mendoza", "Ms. Claire A. Mendoza"]
+      },
+      {
+        "role": "Cord",
+        "people": ["Mr. Vincent A. Ramirez", "Mrs. Sophia A. Ramirez"]
+      },
+      {
+        "role": "Veil",
+        "people": ["Mr. Julian A. Navarro", "Ms. Bianca A. Navarro"]
+      },
+      {
+        "role": "Ring Bearer",
+        "people": ["Master Liam A. Torres"]
+      },
+      {
+        "role": "Bible Bearer",
+        "people": ["Master Noah A. Castillo"]
+      },
+      {
+        "role": "Coin Bearer",
+        "people": ["Master Ethan A. Flores"]
+      }
+    ]
+  },
+
+  "party": {
+    "best-man": {
+      "main": "Mr. Nathan A. Delgado",
+      "members": [
+        "Mr. Caleb A. Navarro",
+        "Mr. Vincent A. Morales",
+        "Mr. Julian A. Castillo"
+      ]
+    },
+    "maid-of-honor": {
+      "main": "Ms. Bianca A. Fernandez",
+      "members": [
+        "Ms. Ariana A. Villanueva",
+        "Ms. Chloe A. Ramirez",
+        "Ms. Samantha A. Ortega"
+      ]
+    }
+  }
+}

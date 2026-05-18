@@ -1,112 +1,16 @@
-/* Test JSON Data */
-const faqData = [
-  {
-    "title": "What should I wear?",
-    "content": "Dress code is semi-formal: polished, elegant, and comfortable."
-  },
-  {
-    "title": "Can I bring a plus one?",
-    "content": "Please bring the guest named on your invitation."
-  },
-  {
-    "title": "Is parking available?",
-    "content": "Yes, parking is available at both venues."
-  },
-  {
-    "title": "Will food be served?",
-    "content": "Yes, a full dinner and refreshments will be provided."
-  },
-  {
-    "title": "Can I take photos?",
-    "content": "Please feel free to capture moments with care and respect."
-  },
-  {
-    "title": "What time should I arrive?",
-    "content": "Please arrive 30 minutes early so we can begin together."
-  }];
-
-const scheduleData = [
-  {
-    "time": "2:00 PM",
-    "title": "Ceremony",
-    "description": "A meaningful ceremony surrounded by our closest family and friends."
-  },
-  {
-    "time": "4:00 PM",
-    "title": "Cocktail Hour",
-    "description": "A relaxed gathering with drinks, light bites, and time to connect."
-  },
-  {
-    "time": "6:00 PM",
-    "title": "Reception",
-    "description": "An evening of dinner, heartfelt speeches, and joyful celebration."
-  }];
-
-const principalSponsorData = [
-  "Mr. Daniel A. Reyes",
-  "Ms. Sophia B. Martinez",
-  "Mr. Ethan C. Walker",
-  "Mrs. Isabella D. Cruz",
-  "Mr. Noah E. Bennett",
-  "Ms. Charlotte F. Flores",
-  "Mr. Liam G. Foster",
-  "Mrs. Amelia H. Garcia",
-  "Mr. Benjamin I. Hayes",
-  "Ms. Mia J. Collins",
-  "Mr. Lucas K. Brooks",
-  "Mrs. Evelyn L. Turner"
-];
-
-const weddingPartyData = [{
-  bestMan: {
-    main: "Mr. Nathan A. Delgado",
-    groomsman: [
-      "Mr. Caleb B. Navarro",
-      "Mr. Vincent B. Morales",
-      "Mr. Julian C. Castillo"
-    ]
-  },
-
-  maidOfHonor: {
-    main: "Ms. Bianca A. Fernandez",
-    bridesmaid: [
-      "Ms. Ariana F. Villanueva",
-      "Ms. Chloe G. Ramirez",
-      "Ms. Samantha H. Ortega"
-    ]
-  }
-}];
-
-const ceremonySponsorData = {
-  candle: [
-    "Mr. Adrian A. Mendoza",
-    "Ms. Claire B. Mendoza"
-  ],
-
-  cord: [
-    "Mr. Vincent C. Ramirez",
-    "Mrs. Sophia D. Ramirez"
-  ],
-
-  veil: [
-    "Mr. Julian E. Navarro",
-    "Ms. Bianca F. Navarro"
-  ],
-
-  ringBearer: [
-    "Master Liam G. Torres"
-  ],
-
-  bibleBearer: [
-    "Master Noah H. Castillo"
-  ],
-
-  coinBearer: [
-    "Master Ethan I. Flores"
-  ]
-};
-
 /* DOM Content Functions */
+const getWeddingData = async() => {
+  try {
+    const response = await fetch("data/wedding-content.json");
+    const data = await response.json();
+
+    return data;
+  } 
+  catch (error) {
+    console.error("Failed to load JSON:", error);
+  }
+}
+
 const setContentData = (target, attrib, data) => {
   document.querySelectorAll(`[data-content="${target}"]`)
     .forEach(element => {
@@ -153,7 +57,7 @@ const recacheImages = (currentVersion) => {
 
 /* Load images in gallery base on max with photo_{num}.jpg format */
 const loadGalleryImages = async (maxImages) => {
-  const galleryContainer = document.querySelector('[data-content="gallery-container"]');
+  const container = document.querySelector('[data-content="gallery-container"]');
 
   const promises = [];
   for (let i = 1; i <= maxImages; i++) {
@@ -173,7 +77,7 @@ const loadGalleryImages = async (maxImages) => {
       div.className = "img-box image-frame";
 
       div.appendChild(img);
-      galleryContainer.appendChild(div);
+      container.appendChild(div);
     }
   });
 };
@@ -204,54 +108,46 @@ const setSocialHashtag = (hashtag) => {
 }
 
 /* set wedding venues informaton and google map embed */
-const setWeddingVenue = (type, venue, date, time, location, map) => {
+const setWeddingVenue = (weddingVenueData) => {
   const qrAPI = "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=";
-  const encodedMap = encodeURIComponent(map);
 
+  weddingVenueData.forEach(venue => {
+    setContentData(`${venue.type}-venue`, "innerHTML", venue.name);
+    setContentData(`${venue.type}-qr`, "src", `${qrAPI}${encodeURIComponent(venue.map)}`);
+    setContentData(`${venue.type}-date`, "innerHTML", venue.date);
+    setContentData(`${venue.type}-time`, "innerHTML", venue.time);
+    setContentData(`${venue.type}-location`, "innerHTML", venue.address);
+    setContentData(`${venue.type}-map`, "href", venue.map);
+    setContentData(`${venue.type}-map-embed`, "src", `${venue.map}&z=16&output=embed`);
 
-  if(type === "ceremony") {
-    setContentData("ceremony-venue", "innerHTML", venue);
-    setContentData("ceremony-qr", "src", `${qrAPI}${encodedMap}`);
-    setContentData("ceremony-date", "innerHTML", date);
-    setContentData("ceremony-time", "innerHTML", time);
-    setContentData("ceremony-location", "innerHTML", location);
-    setContentData("ceremony-map", "href", map);
-    setContentData("ceremony-map-embed", "src", `${map}&z=16&output=embed`);
-  }
-
-  if(type === "reception") {
-    setContentData("reception-venue", "innerHTML", venue);
-    setContentData("reception-qr", "src", `${qrAPI}${encodedMap}`);
-    setContentData("reception-date", "innerHTML", date);
-    setContentData("reception-time", "innerHTML", time);
-    setContentData("reception-location", "innerHTML", location);
-    setContentData("reception-map", "href", map);
-    setContentData("reception-map-embed", "src", `${map}&z=16&output=embed`);
-  }
+  });
 }
 
 /* set wedding schedule */
-const setWeddingSchedule = (schedTitle, schedTime, schedContent) => {
-  const schedContainer = document.querySelector('[data-content="schedule-container"]');
-  const divItem = document.createElement("div");
-  const divTime = document.createElement("div");
-  const divContent = document.createElement("div");
-  const title = document.createElement("h3");
-  const content = document.createElement("p");
+const setWeddingSchedule = (scheduleData) => {
+  const container = document.querySelector('[data-content="schedule-container"]');
 
-  divItem.className = "timeline-item";
-  divTime.className = "timeline-time";
-  divContent.className = "timeline-content";
+  scheduleData.forEach(schedule => {
+    const divItem = document.createElement("div");
+    const divTime = document.createElement("div");
+    const divContent = document.createElement("div");
+    const title = document.createElement("h3");
+    const content = document.createElement("p");
 
-  divTime.innerHTML = schedTime;
-  title.innerHTML = schedTitle;
-  content.innerHTML = schedContent;
+    divItem.className = "timeline-item";
+    divTime.className = "timeline-time";
+    divContent.className = "timeline-content";
 
-  divContent.appendChild(title);
-  divContent.appendChild(content);
-  divItem.appendChild(divTime);
-  divItem.appendChild(divContent);
-  schedContainer.appendChild(divItem);
+    title.innerHTML = schedule.title;
+    divTime.innerHTML = schedule.time;
+    content.innerHTML = schedule.details;
+
+    divContent.appendChild(title);
+    divContent.appendChild(content);
+    divItem.appendChild(divTime);
+    divItem.appendChild(divContent);
+    container.appendChild(divItem);
+  });
 }
 
 
@@ -272,21 +168,22 @@ const setRsvpDeadline = (deadline) => {
 }
 
 /* set FAQ section from json */
-const setFAQ = (faqTitle, faqContent) => {
-  const faqContainer = document.querySelector('[data-content="faq-container"]');
+const setFAQ = (faqData) => {
+  const container = document.querySelector('[data-content="faq-container"]');
 
-  const div = document.createElement("div");
-  const title = document.createElement("h3");
-  const content = document.createElement("p");
+  faqData.forEach(faq => {
+    const div = document.createElement("div");
+    const title = document.createElement("h3");
+    const content = document.createElement("p");
 
-  div.className = "faq-card";
-  title.innerHTML = faqTitle;
-  content.innerHTML = faqContent;
+    div.className = "faq-card";
+    title.innerHTML = faq.question;
+    content.innerHTML = faq.answer;
 
-  div.appendChild(title);
-  div.appendChild(content);
-  faqContainer.appendChild(div);
-
+    div.appendChild(title);
+    div.appendChild(content);
+    container.appendChild(div);
+  })
 }
 
 
@@ -306,147 +203,114 @@ const setWeddingCouple = (groomName, brideName) => {
 }
 
 /* set wedding official*/
-const setCeremonyOfficial = (officialsName) => {
-  setContentData("ceremony-official", "innerHTML", officialsName);
+const setCeremonyOfficial = (officialName) => {
+  setContentData("ceremony-official", "innerHTML", officialName);
 }
 
-/* set groom family*/
-const setGroomFamily = (groomFather, groomMother) => {
-  setContentData("groom-father", "innerHTML", groomFather);
-  setContentData("groom-mother", "innerHTML", groomMother);
-}
-
-/* set bride family*/
-const setBrideFamily = (brideFather, brideMother) => {
-  setContentData("bride-father", "innerHTML", brideFather);
-  setContentData("bride-mother", "innerHTML", brideMother);
+/* set groom/bride family*/
+const setWeddingFamily = (familyData) => {
+  setContentData("groom-father", "innerHTML", familyData.groom.father);
+  setContentData("groom-mother", "innerHTML", familyData.groom.mother);
+  setContentData("bride-father", "innerHTML", familyData.bride.father);
+  setContentData("bride-mother", "innerHTML", familyData.bride.mother);
 }
 
 /* set princial sponsor */
-const setPrincipalSponsor = (sponsorName) => {
-  const sponsorsContainer = document.querySelector('[data-content="sponsors-list"]');
-  const div = document.createElement("div");
+const setPrincipalSponsor = (sponsorData) => {
+  const container = document.querySelector('[data-content="sponsors-list"]');
 
-  div.classList = "sponsor-item";
-  div.innerHTML = sponsorName;
-  sponsorsContainer.appendChild(div);
-}
-
-const setWeddingPary = (type, name) => {
-  if(type === "bestMan"){
-    setContentData("best-man", "innerHTML", name);
-    return;
-  }
-
-  if(type === "maidOfHonor"){
-    setContentData("maid-of-honor", "innerHTML", name);
-    return;
-  }
-
-  if(type === "groomsman"){
-    const container = document.querySelector('[data-content="groomsman"]');
+  sponsorData.forEach(sponsor => {
     const div = document.createElement("div");
 
-    div.className = "party-item";
-    div.innerHTML = name;
+    div.classList = "sponsor-item";
+    div.innerHTML = sponsor;
     container.appendChild(div);
-  }
+  });
 
-  if(type === "bridesmaid"){
-    const container = document.querySelector('[data-content="bridesmaid"]');
-    const div = document.createElement("div");
-
-    div.className = "party-item";
-    div.innerHTML = name;
-    container.appendChild(div);
-  }
 }
 
-const setCeremonySponsor = () => {
+const setWeddingParty = (weddingPartyData) => {
+  Object.keys(weddingPartyData).forEach(key => {
+      setContentData(`${key}-main`, "innerHTML", weddingPartyData[key].main);
 
+      const container = document.querySelector(`[data-content="${key}-attendant"]`);
+      weddingPartyData[key].members.forEach(attendant => {
+        const div = document.createElement("div");
+        div.className = "party-item";
+        div.innerHTML = attendant;
+        container.appendChild(div);
+      });
+    });
+}
+
+const setCeremonySponsor = (ceremonySponsorData) => {
+  const container = document.querySelector('[data-content="ceremony-sponsors"]');
+  ceremonySponsorData.forEach(sponsor => {
+    const div = document.createElement("div");
+    const small = document.createElement("small");
+
+    div.className = "entourage-card";
+    small.innerHTML = sponsor.role;
+    div.appendChild(small);
+
+    sponsor.people.forEach(person => {
+      const h3 = document.createElement("h3");
+      h3.innerHTML = person;
+      div.appendChild(h3);
+    });
+
+    container.appendChild(div);
+  });
 }
 
 /* Run on DOMContentLoaded*/
 document.addEventListener("DOMContentLoaded", async () => {
 
+  const weddingData = await getWeddingData();
   // image cache version
-  recacheImages("51820261");
+  // recacheImages("51820261");
 
   /* Wedding Persons */
-  setWeddingCouple("Groom", "Bride");
+  setWeddingCouple(weddingData.groom, weddingData.bride);
 
   /* Ceremony Official */
-  setCeremonyOfficial("Rev. FName A. LName");
+  setCeremonyOfficial(weddingData.officiant);
 
-  /* Groom's Family */
-  setGroomFamily("Mr. Fname A. LName", "Mrs. Fname A. LName");
-
-  /* Bride's Family */
-  setBrideFamily("Mr. Fname A. LName", "Mrs. Fname A. LName");
+  /* Groom's/Bride's Family */
+  setWeddingFamily(weddingData.family);
 
   /* Principal Sponsor */
-  principalSponsorData.forEach(sponsor => {
-    setPrincipalSponsor(sponsor);
-  });
+  setPrincipalSponsor(weddingData.sponsors.principal);
 
   /* Wedding Party */
-  weddingPartyData.forEach(role => {
+ setWeddingParty(weddingData.party);
 
-    // generate bestman
-    setWeddingPary("bestMan", role.bestMan.main);
-    role.bestMan.groomsman?.forEach(groomsman => {
-      setWeddingPary("groomsman", groomsman);
-    });
-
-    // generate maid of honors
-    setWeddingPary("maidOfHonor", role.maidOfHonor.main);
-    role.maidOfHonor.bridesmaid?.forEach(bridesmaid => {
-      setWeddingPary("bridesmaid", bridesmaid);
-    });
-  });
+  /* Ceremory Sponsor */
+  setCeremonySponsor(weddingData.sponsors.ceremony);
 
   /* Wedding Date */
-  setWeddingDate("05/19/2026");
+  setWeddingDate(weddingData.weddingDate);
 
   /* RSVP Deadline */
-  setRsvpDeadline("05/26/2026");
+  setRsvpDeadline(weddingData.rsvpDeadline);
 
   /* Wedding Details */
-  setWeddingVenue(
-    "ceremony",
-    "St. Mary Church",
-    "June 21, 2026",
-    "2:00 PM",
-    "123 Church Street, City Name",
-    "https://www.google.com/maps?q=6.116338,125.171833"
-  );
-  setWeddingVenue(
-    "reception",
-    "Sunset Garden Hall",
-    "June 21, 2026",
-    "6:00 PM",
-    "Sunset Avenue, City Name",
-    "https://www.google.com/maps?q=6.116117402370895,125.18710124287222"
-  );
-
+  setWeddingVenue(weddingData.venue);
+ 
   /* Wedding Schedule */
-  scheduleData.forEach(sched => {
-    setWeddingSchedule(sched.title, sched.time, sched.description);
-  });
+  setWeddingSchedule(weddingData.schedule);
 
   /* RSVP Google Form */
-  setRsvpForm("https://docs.google.com/forms/d/e/1FAIpQLSddunQoLP03Ui82aRpaxcbs5qL3nsDoKH2Y2cCFVmnOR7QxIQ/viewform?usp=header");
+  setRsvpForm(weddingData.rsvpFormUrl);
 
   /* Frequently Ask Question */
-  faqData.forEach(faq => {
-    setFAQ(faq.title, faq.content);
-  });
+  setFAQ(weddingData.faq);
 
   /* Social Media Hashtags */
-  setSocialHashtag("ForeverPersonA&PersonB");
+  setSocialHashtag(weddingData.hashtag);
 
   /* Spotify Playlist */
-  setSpotifyPlaylist("https://open.spotify.com/embed/playlist/54ZA9LXFvvFujmOVWXpHga");
+  setSpotifyPlaylist(weddingData.spotifyUrl);
 
   /* Load Photo Gallery */
   await loadGalleryImages(6);

@@ -46,7 +46,24 @@ https://squoosh.app/
       <!-- <div class="sponsor-item">Mr. Antonio Cruz & Mrs. Elena Cruz</div> -->
 
       <!-- BestMan/MaidOfHonor Template -->
-      <div class="party-item">Adrian Lim</div>
+      <div class="party-column">
+          <div class="party-highlight">
+            <small>Best Man</small>
+            <h3 data-content="best-man"></h3>
+          </div>
+
+          <div class="party-list" data-content="groomsman">
+            <!-- Generate Groomsman -->
+              <div class="party-item">Adrian Lim</div>
+          </div>
+        </div>
+
+      <!-- Ceremony Sponsor Template  -->
+      <div class="entourage-card">
+          <small>Ring Bearer</small>
+          <h3>Ethan Cruz</h3>
+          <h3>Ethan Cruz</h3>
+        </div>
 
 // const pageSections = document.querySelectorAll('.section[id]');
 // const updateNoMarginScroll = () => {
