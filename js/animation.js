@@ -3,7 +3,7 @@ const initAnimation = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // GLOBAL REVEAL ANIMATION
-    gsap.utils.toArray(".section, .details-card, .faq-card, .story-wrapper, .details-intro, .timeline-item, .map-toggle, .map-content, .reminder-box, .rsvp-box, .rsvp-note, .img-box, .gallery-social, .spotify-intro, .spotify-card, .entourage-card, .group-heading, .sponsor-item, .party-column, .featured-card")
+    gsap.utils.toArray(".story-wrapper, .details-intro, .details-card, .map-toggle, .map-content, .timeline-item, .rsvp-note, .rsvp-box, .faq-card, .reminder-box, .img-box, .gallery-social, .spotify-intro, .spotify-card, .group-heading, .featured-card, .entourage-card, .sponsor-item, .party-column")
         .forEach((el) => {
             gsap.fromTo(
                 el,
@@ -21,7 +21,7 @@ const initAnimation = () => {
                     scrollTrigger: {
                         trigger: el,
                         start: "top 85%",
-                        toggleActions: "play none none reverse"
+                        toggleActions: "play none none reverse",
                     }
                 }
             );
@@ -38,7 +38,7 @@ const initAnimation = () => {
             scrollTrigger: {
                 trigger: title,
                 start: "top 85%",
-                toggleActions: "play none none reverse"
+                toggleActions: "play none none reverse",
             }
         });
     });
@@ -94,7 +94,7 @@ const initAnimation = () => {
 
 
     // Image Zoom-on-Scroll
-    gsap.utils.toArray(".img-box img").forEach((img) => {
+    gsap.utils.toArray("img").forEach((img) => {
         gsap.fromTo(
             img,
             { scale: 1.1 },
@@ -105,7 +105,7 @@ const initAnimation = () => {
                 scrollTrigger: {
                     trigger: img,
                     start: "top 90%",
-                    toggleActions: "play none none reverse"
+                    toggleActions: "play none none reverse",
                 }
             }
         );
