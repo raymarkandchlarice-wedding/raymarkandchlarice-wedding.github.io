@@ -55,7 +55,7 @@ const updateCountdown = (weddingDate, timeOffset) => {
 document.addEventListener("DOMContentLoaded", async () => {
 
   /* COUNTDOWN TIMER */
-  const weddingDate = new Date("May 18, 2026 13:00:00").getTime();
+  const weddingDate = new Date("May 19, 2026 13:00:00").getTime();
   const timeOffset = await getTimeOffset();
 
   setInterval(() => { updateCountdown(weddingDate, timeOffset) }, 1000);

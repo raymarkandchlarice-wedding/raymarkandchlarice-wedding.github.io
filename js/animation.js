@@ -62,7 +62,7 @@ const initAnimation = () => {
             duration: 1.2,
             ease: "power3.out"
         }, "-=0.4")
-        .from(".countdown-finished", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" });
+        .from(".countdown-finished", { opacity: 0, y: 20, duration: 0.8, ease: "power3.out" }, "-=1.2");
 
 
     // Footer Animation
