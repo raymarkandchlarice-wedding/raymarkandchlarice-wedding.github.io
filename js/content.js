@@ -70,10 +70,10 @@ const setWeddingFamily = (familyData) => {
 };
 
 /* Set principal sponsors list */
-const setPrincipalSponsor = (sponsorData) => {
+const setPrincipalSponsor = (principalSponsorData) => {
   const container = document.querySelector('[data-content="sponsors-list"]');
 
-  sponsorData.forEach(sponsor => {
+  principalSponsorData.forEach(sponsor => {
     const div = document.createElement("div");
     div.classList = "sponsor-item";
     div.innerHTML = sponsor;
@@ -196,7 +196,7 @@ const setFAQ = (faqData) => {
 };
 
 /* Set gallery images */
-const loadGalleryImages = async (maxImages) => {
+const loadGalleryImages = async(maxImages) => {
   const container = document.querySelector('[data-content="gallery-container"]');
   const promises = [];
 
