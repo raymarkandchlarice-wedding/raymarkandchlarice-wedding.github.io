@@ -19,7 +19,7 @@ const initAnimation = () => {
                     duration: 0.95,
                     ease: "power3.out",
                     scrollTrigger: {
-                        trigger: el,
+                        trigger: element,
                         start: "top 85%",
                         toggleActions: "play none none reverse",
                     }
