@@ -255,6 +255,10 @@ const setWeddingDate = (weddingDate) => {
 /* Run setup once DOM is ready */
 document.addEventListener("DOMContentLoaded", async () => {
   const weddingData = await getWeddingData();
+
+  // start wedding countdown
+  runWeddingTimer(weddingData.weddingDate);
+
   // image cache version
   recacheImages("5192026");
 

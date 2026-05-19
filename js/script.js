@@ -14,7 +14,7 @@ const getDate = async () => {
 
 const getTimeOffset = async () => {
   const apiDate = await getDate();
-  if (!apiDate) return 0;
+  if(!apiDate) return 0;
   return new Date(apiDate).getTime() - Date.now();
 }
 
@@ -51,9 +51,9 @@ const updateCountdown = (weddingDate, timeOffset) => {
 
 }
 
-/* Run on DOMContentLoaded*/
-document.addEventListener("DOMContentLoaded", () => {
-  const weddingDate = new Date("May 19, 2026 13:00:00").getTime();
+/* Initiate timer countdown */
+const runWeddingTimer = (weddingDateData) => {
+  const weddingDate = new Date(weddingDateData).getTime();
   let timeOffset = 0;
 
   // start countdown immediately
@@ -67,8 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
   getTimeOffset().then((offset) => {
     timeOffset = offset;
   });
-});
-
+};
 
 
 
