@@ -3,7 +3,7 @@
   "groom": "Harry",
   "officiant": "Prof. Albus Dumbledore",
   "hashtag": "#HarryAndHermioneForever",
-  "weddingDate": "07/14/2026",
+  "weddingDate": "07/04/2026",
   "rsvpDeadline": "07/10/2026",
 
   "spotifyUrl": "https://open.spotify.com/playlist/54ZA9LXFvvFujmOVWXpHga",
@@ -24,7 +24,7 @@
     {
       "type": "ceremony",
       "name": "Hogwarts Great Hall",
-      "date": "July 14, 2026",
+      "date": "July 04, 2026",
       "time": "2:00 PM",
       "address": "Hogwarts School of Witchcraft and Wizardry",
       "map": "https://www.google.com/maps?q=6.116338,125.171833"
@@ -32,7 +32,7 @@
     {
       "type": "reception",
       "name": "Black Pearl Grand Deck",
-      "date": "July 14, 2026",
+      "date": "July 04, 2026",
       "time": "6:00 PM",
       "address": "Caribbean Seas, Port Royal",
       "map": "https://www.google.com/maps?q=6.116117402370895,125.18710124287222"
