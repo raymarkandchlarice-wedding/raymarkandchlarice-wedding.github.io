@@ -22,6 +22,25 @@
    --radius: 24px;
  }
 
+ /* Curosr*/
+ html,
+ body {
+   cursor: url(/assets/cursor/cursor_default.png), default !important;
+ }
+
+ button,
+ a,
+ img,
+ .details-card,
+ .faq-card,
+ .hashtag,
+ .featured-card,
+ .entourage-card,
+ .sponsor-item,
+ .party-column {
+   cursor: url(/assets/cursor/cursor_hover.png), pointer !important;
+ }
+
  /* BASE */
  html {
    scroll-behavior: smooth;
@@ -223,7 +242,7 @@
    background:
      linear-gradient(rgba(10, 98, 143, 0.45),
        rgba(10, 98, 143, 0.45)),
-     url("../images/main_hero.jpg");
+     url("/images/main_hero.jpg");
    background-size: cover;
    background-position: center;
  }
@@ -462,12 +481,12 @@
      font-size: 2.5rem;
    }
 
-    .hero h2 {
-      font-size: 1rem;
+   .hero h2 {
+     font-size: 1rem;
    }
 
    .hero p {
-    font-size: 0.8rem;
+     font-size: 0.8rem;
    }
 
    .time-box {
@@ -1222,7 +1241,7 @@
  }
 
  .family-grid {
-  max-width: 1000px;
+   max-width: 1000px;
    grid-template-columns: repeat(2, 1fr);
    margin: auto;
  }
@@ -1373,7 +1392,7 @@
    text-align: center;
    background:
      linear-gradient(rgba(10, 98, 143, 0.55), rgba(10, 98, 143, 0.55)),
-     url("../images/footer_hero.jpg");
+     url("/images/footer_hero.jpg");
    background-size: cover;
    background-position: center;
  }
