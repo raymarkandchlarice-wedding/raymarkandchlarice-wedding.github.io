@@ -5,12 +5,24 @@
   "emeraldwalk.runonsave": {
     "commands": [
       {
-        "match": "^(?!.*\\.min\\.js$).*\\.js$",
-        "cmd": "terser \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}.min.js\" -c -m"
+        "match": "animation\\.js$",
+        "cmd": "terser \"${file}\" -o \"${fileDirname}\\animation.min.js\" -c -m"
       },
       {
-        "match": "^(?!.*\\.min\\.css$).*\\.css$",
-        "cmd": "cleancss -o \"${fileDirname}/${fileBasenameNoExtension}.min.css\" \"${file}\""
+        "match": "content\\.js$",
+        "cmd": "terser \"${file}\" -o \"${fileDirname}\\content.min.js\" -c -m"
+      },
+      {
+        "match": "script\\.js$",
+        "cmd": "terser \"${file}\" -o \"${fileDirname}\\script.min.js\" -c -m"
+      },
+      {
+        "match": "listener\\.js$",
+        "cmd": "terser \"${file}\" -o \"${fileDirname}\\listener.min.js\" -c -m"
+      },
+      {
+        "match": "style\\.css$",
+        "cmd": "cleancss -o \"${fileDirname}\\style.min.css\" \"${file}\""
       }
     ]
   }
