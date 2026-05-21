@@ -23,6 +23,10 @@
       {
         "match": "style\\.css$",
         "cmd": "cleancss -o \"${fileDirname}\\style.min.css\" \"${file}\""
+      },
+      {
+        "match": "fonts\\.css$",
+        "cmd": "cleancss -o \"${fileDirname}\\fonts.min.css\" \"${file}\""
       }
     ]
   }
