@@ -45,9 +45,10 @@ const preloadImage = (src) => {
 
 /* Refresh image URLs to bypass browser cache */
 const recacheImages = (currentVersion) => {
-  const allImages = document.querySelectorAll("img");
+  const allImages = document.querySelectorAll("img[data-image]");
   allImages.forEach((img) => {
-    const url = new URL(img.src, window.location.href);
+    const source = img.dataset.image;
+    const url = new URL(source, window.location.href);
     url.searchParams.set("v", currentVersion);
     img.src = url.toString();
   });
