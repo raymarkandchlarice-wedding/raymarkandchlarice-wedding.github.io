@@ -1,9 +1,9 @@
 {
-  "bride": "Hermione",
-  "groom": "Harry",
+  "bride": "CHLARICE",
+  "groom": "RAYMARK",
   "officiant": "Prof. Albus Dumbledore",
   "hashtag": "#HarryAndHermioneForever",
-  "weddingDate": "07/04/2026",
+  "weddingDate": "06/04/2026",
   "rsvpDeadline": "07/01/2026",
 
   "spotifyUrl": "https://open.spotify.com/playlist/54ZA9LXFvvFujmOVWXpHga",
@@ -11,12 +11,12 @@
 
   "family": {
     "bride": {
-      "father": "Arthur Weasley",
-      "mother": "Molly Weasley"
+      "father": "Roselito M. Malalis",
+      "mother": "Juvy C. Malalis"
     },
     "groom": {
-      "father": "Tony Stark",
-      "mother": "Pepper Potts"
+      "father": "Reynaldo A. Paquit",
+      "mother": "Jasmin P. Paquit (Sister)"
     }
   },
 
@@ -31,11 +31,11 @@
     },
     {
       "type": "reception",
-      "name": "Black Pearl Grand Deck",
+      "name": "Palmera Garden Hotel",
       "date": "July 04, 2026",
-      "time": "6:00 PM",
-      "address": "Caribbean Seas, Port Royal",
-      "map": "https://www.google.com/maps?q=6.116117402370895,125.18710124287222"
+      "time": "2:00 PM",
+      "address": "Aparente Street corner Sebastian, General Santos City",
+      "map": "https://www.google.com/maps?q=6.1304633442595104,125.17132262464766"
     }
   ],
 
@@ -51,53 +51,52 @@
       "details": "Enjoy enchanted drinks, pirate tales, and heroic stories."
     },
     {
-      "title": "Reception Feast",
-      "time": "6:00 PM",
-      "details": "Dinner, dancing, spells, and celebrations across the multiverse."
+      "title": "Wedding Reception",
+      "time": "2:00 PM",
+      "details": "Join us for dinner, drinks, dancing, and a joyful celebration of our new beginning."
     }
   ],
 
   "faq": [
     {
-      "question": "What should I wear?",
-      "answer": "Formal robes, pirate coats, or superhero suits are welcome."
-    },
-    {
-      "question": "Can I bring a plus one?",
-      "answer": "Only if they possess a Hogwarts invitation."
-    },
-    {
-      "question": "Is parking available?",
-      "answer": "Yes, for broomsticks, Quinjets, and pirate ships."
-    },
-    {
-      "question": "Will food be served?",
-      "answer": "Yes, including Butterbeer, shawarma, and Caribbean delicacies."
-    },
-    {
       "question": "Can I take photos?",
-      "answer": "Yes, but no flash magic during spellcasting."
+      "answer": "YES! but no magic flash during spellcasting."
     },
     {
-      "question": "What time should I arrive?",
-      "answer": "Please arrive 30 minutes before the Floo Network opens."
+      "question": "Can I bring a plus-one in your wedding?",
+      "answer": "Unfortunately, No! Our guests are limited and hand picked on purpose. We kindly request to not bring uninvited guest or tag-along companies may they be an adult or kids."
+    },
+    {
+      "question": "Will there be transportation provided to the venue?",
+      "answer": "Transportation to the venue will not be provided. However, there is ample parking available for those who prefer to drive."
+    },
+    {
+      "question": "What if I still go even if I did not fill-out the RSVP?",
+      "answer": "Since your name is not listed, unfortunately there will be no seat & no food available for you."
+    },
+    {
+      "question": "I replied \"NO\" on RSVP yet I changed my mind, can I go?",
+      "answer": "It depends on the available slots. If you say \"NO\", it means you slot will be given to another guest."
+    },
+    {
+      "question": "Are children allowed at the wedding?",
+      "answer": "We love your little ones! However, we have decided to keep our wedding and reception an adults- only event with the exception of immediate family & those requested. We encourage you to use this day/afternoon/evening as a date!"
     }
   ],
 
   "sponsors": {
     "principal": [
-      "Jack Sparrow",
-      "Will Turner",
-      "Elizabeth Swann",
-      "Thor Odinson",
-      "Loki Laufeyson",
-      "Natasha Romanoff",
-      "Steve Rogers",
-      "Bruce Banner",
-      "Wanda Maximoff",
-      "Peter Parker",
-      "Doctor Strange",
-      "Gamora"
+      "Marlo A. Rendon, MD.",
+      "Ismael Dandan",
+      "Darwin P. Corpuz, MD.",
+      "Ellen Cerina",
+      "Wendy Alambra-Cosas",
+      "Arlene D. Agao-Agao, LPT.",
+      "Mary Ann M. Sabido",
+      "Ruby L. Pascua",
+      "Samuel Muyco",
+      "Leonardo O. Betonio",
+      "Caryl M. Delgado, MD."
     ],
 
     "ceremony": [
@@ -125,7 +124,7 @@
       {
         "role": "Ring Bearer",
         "people": [
-          "Grogu"
+          "Chlark Nico C. Paquit"
         ]
       },
       {
