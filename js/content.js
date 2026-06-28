@@ -48,11 +48,20 @@ const recacheImages = (currentVersion) => {
   const allImages = document.querySelectorAll("img[data-image]");
   allImages.forEach((img) => {
     const source = img.dataset.image;
-    const url = new URL(source, window.location.href);
-    url.searchParams.set("v", currentVersion);
-    img.src = url.toString();
+    const imagePath = `${source}?v=${currentVersion}`;
+    img.src = imagePath;
   });
 };
+
+/* Refresh background images to bypass browser cache */
+const reacacheBackgroundImages = (currentVersion) => {
+  const allBackground = document.querySelectorAll("[data-background]");
+  allBackground.forEach((background) => {
+    const source = background.dataset.background;
+    const imagePath = `${source}?v=${currentVersion}`;
+    background.style.setProperty("--bg-image",`url("${imagePath}")`);
+  });
+}
 
 /* Set couple names in the hero, story, and footer */
 const setWeddingCouple = (groomName, brideName) => {
@@ -264,6 +273,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   runWeddingTimer(weddingData.weddingDate);
 
   // image cache version
+  reacacheBackgroundImages(CONTENT_VERSION);
   recacheImages(CONTENT_VERSION);
 
   setWeddingCouple(weddingData.groom, weddingData.bride);

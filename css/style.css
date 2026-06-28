@@ -239,6 +239,8 @@
 
  /* HOME SECTION */
  .hero {
+
+  --bg-image: url("/");
    position: relative;
    min-height: calc(100vh - 78px);
    display: flex;
@@ -249,7 +251,7 @@
    background:
      linear-gradient(rgba(10, 98, 143, 0.45),
        rgba(10, 98, 143, 0.45)),
-     url("/images/main_hero.jpg");
+     var(--bg-image);
    background-size: cover;
    background-position: center calc(50% + 50px);
  }
@@ -1413,6 +1415,7 @@
 
  /* FOOTER */
  .footer-hero {
+   --bg-image: url("/");
    position: relative;
    height: 85vh;
    display: flex;
@@ -1421,7 +1424,7 @@
    text-align: center;
    background:
      linear-gradient(rgba(10, 98, 143, 0.55), rgba(10, 98, 143, 0.55)),
-     url("/images/footer_hero.jpg");
+     var(--bg-image);
    background-size: cover;
    background-position: center;
  }
