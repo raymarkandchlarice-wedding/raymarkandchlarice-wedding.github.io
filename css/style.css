@@ -231,16 +231,16 @@
    cursor: pointer;
  }
 
-   @media (max-width: 575.98px) {
-    .logo {
-      font-size: 1.3rem;
-    }
+ @media (max-width: 575.98px) {
+   .logo {
+     font-size: 1.3rem;
    }
+ }
 
  /* HOME SECTION */
  .hero {
 
-  --bg-image: url("/");
+   --bg-image: url("/");
    position: relative;
    min-height: calc(100vh - 78px);
    display: flex;
@@ -448,10 +448,10 @@
  }
 
  @media (max-width: 1200px) {
-    .hero {
-      background-position: center;
+   .hero {
+     background-position: center;
    }
-}
+ }
 
  @media (max-width: 767.98px) {
    .hero h1 {
@@ -501,8 +501,8 @@
    }
  }
 
- @media (max-width: 479.98px){
-     .hero {
+ @media (max-width: 479.98px) {
+   .hero {
      background-position: center, calc(50% - 140px) center;
    }
  }
@@ -553,7 +553,7 @@
 
  @media (max-width: 575.98px) {
    .story-text h3 {
-    font-size: 1.7rem;
+     font-size: 1.7rem;
    }
  }
 
@@ -1061,13 +1061,13 @@
    }
  }
 
-  @media (max-width: 575.98px) {
+ @media (max-width: 575.98px) {
    .gallery-social-content h3 {
      font-size: 2.2rem;
    }
 
    .hashtag {
-    font-size: 0.95rem;
+     font-size: 0.95rem;
    }
  }
 
@@ -1188,9 +1188,9 @@
  }
 
  @media (max-width: 575.98px) {
-  .spotify-info h3 span {
-    font-size: 1.3rem;
-  }
+   .spotify-info h3 span {
+     font-size: 1.3rem;
+   }
 
    .spotify-card {
      padding: 20px;
@@ -1309,11 +1309,11 @@
    gap: 20px;
  }
 
- .sponsors-list > :last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-  justify-self: center;
-  width: 50%;
-}
+ .sponsors-list> :last-child:nth-child(odd) {
+   grid-column: 1 / -1;
+   justify-self: center;
+   width: 50%;
+ }
 
  .sponsor-item {
    padding: 24px 28px;
@@ -1447,9 +1447,18 @@
  }
 
  .footer-date {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 8px;
    margin-top: 20px;
    color: rgba(255, 255, 255, 0.9);
    letter-spacing: 4px;
+ }
+
+ .footer-ring {
+   width: 40px;
+   height: auto;
  }
 
  @media (max-width: 575.98px) {

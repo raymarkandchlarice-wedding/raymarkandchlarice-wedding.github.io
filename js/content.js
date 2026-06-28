@@ -101,7 +101,7 @@ const setWeddingParty = (weddingPartyData) => {
     setContentData(`${party.type}-main`, "innerHTML", party.main);
 
     const container = document.querySelector(`[data-content="${party.type}-attendant"]`);
-    party.members.forEach(attendant => {
+    party?.members.forEach(attendant => {
       const div = document.createElement("div");
       div.className = "party-item";
       div.innerHTML = attendant;

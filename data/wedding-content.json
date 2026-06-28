@@ -1,9 +1,9 @@
 {
   "bride": "CHLARICE",
   "groom": "RAYMARK",
-  "officiant": "Prof. Albus Dumbledore",
+  "officiant": "TBA",
   "hashtag": "#RayChaSaysIDo",
-  "weddingDate": "07/04/2026",
+  "weddingDate": "06/04/2026",
   "rsvpDeadline": "07/01/2026",
 
   "spotifyUrl": "https://open.spotify.com/playlist/54ZA9LXFvvFujmOVWXpHga",
@@ -23,10 +23,10 @@
   "venue": [
     {
       "type": "ceremony",
-      "name": "Hogwarts Great Hall",
+      "name": "TBA",
       "date": "July 04, 2026",
-      "time": "2:00 PM",
-      "address": "Hogwarts School of Witchcraft and Wizardry",
+      "time": "1:00 PM",
+      "address": "TBA",
       "map": "https://www.google.com/maps?q=6.116338,125.171833"
     },
     {
@@ -41,14 +41,14 @@
 
   "schedule": [
     {
-      "title": "Wizarding Ceremony",
-      "time": "2:00 PM",
-      "details": "A magical union witnessed by witches, wizards, pirates, and heroes."
+      "title": "Wedding Ceremony",
+      "time": "TBA",
+      "details": "Witness our heartfelt exchange of vows as we begin our forever together."
     },
     {
-      "title": "Butterbeer Cocktail Hour",
-      "time": "4:00 PM",
-      "details": "Enjoy enchanted drinks, pirate tales, and heroic stories."
+      "title": "Cocktail Hour",
+      "time": "TBA",
+      "details": "Enjoy drinks, light bites, and great company while the newlyweds capture special moments."
     },
     {
       "title": "Wedding Reception",
@@ -142,18 +142,16 @@
   "party": [
     {
       "type": "best-man",
-      "main": "Ron Weasley",
+      "main": "TBA",
       "members": [
-        "Hagrid",
-        "Neville Longbottom"
+   
       ]
     },
     {
       "type": "maid-of-honor",
-      "main": "Luna Lovegood",
+      "main": "TBA",
       "members": [
-        "Ginny Weasley",
-        "Cho Chang"
+
       ]
     }
   ]
