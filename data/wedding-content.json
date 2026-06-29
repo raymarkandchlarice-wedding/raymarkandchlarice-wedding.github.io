@@ -33,7 +33,7 @@
       "type": "reception",
       "name": "Palmera Garden Hotel",
       "date": "July 04, 2026",
-      "time": "2:00 PM",
+      "time": "3:00 PM",
       "address": "Aparente Street corner Sebastian, General Santos City",
       "map": "https://www.google.com/maps?q=6.1304633442595104,125.17132262464766"
     }
@@ -47,12 +47,12 @@
     },
     {
       "title": "Photo Session",
-      "time": "3:00 PM",
+      "time": "2:30 PM",
       "details": "The newlyweds, together with their families and entourage, will capture cherished moments through commemorative photographs before the celebration continues."
     },
     {
       "title": "Wedding Reception",
-      "time": "4:00 PM",
+      "time": "3:00 PM",
       "details": "Join us for dinner, drinks, dancing, and a joyful celebration of our new beginning."
     }
   ],
