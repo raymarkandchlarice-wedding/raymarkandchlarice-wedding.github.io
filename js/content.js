@@ -299,7 +299,7 @@ const initContent = async () => {
 
   loadGalleryImages(GALLERY_IMAGES);
 
-  document.body.classList.remove("hidden");
+  document.body.style.display = "block";
   initAnimation();
 };
 
