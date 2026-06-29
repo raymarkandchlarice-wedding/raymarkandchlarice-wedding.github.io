@@ -1,7 +1,7 @@
 {
   "bride": "CHLARICE",
   "groom": "RAYMARK",
-  "officiant": "TBA",
+  "officiant": "Hon. Marie Ellengrid S. L. Baliguat",
   "hashtag": "#ShakenNotSeparated",
   "weddingDate": "07/04/2026",
   "rsvpDeadline": "07/03/2026",
@@ -11,8 +11,8 @@
 
   "family": {
     "bride": {
-      "father": "Roselito M. Malalis",
-      "mother": "Juvy C. Malalis"
+      "father": "Roselito M. Malinis",
+      "mother": "Juvy C. Malinis"
     },
     "groom": {
       "father": "Reynaldo A. Paquit",
@@ -81,6 +81,10 @@
     {
       "question": "Are children allowed at the wedding?",
       "answer": "We love your little ones! However, we have decided to keep our wedding and reception an adults- only event with the exception of immediate family & those requested. We encourage you to use this day/afternoon/evening as a date!"
+    },
+    {
+      "question": "What should I wear to your wedding?",
+      "answer": "We'd love for everyone to dress in Formal or Semi-Formal attire. Our wedding color motif is Powder Blue, and we'd appreciate it if you could wear this shade. Ladies: Dress/Cocktail Dress. Gentlemen: Long Sleeve, Polo, or Coat."
     }
   ],
 
@@ -94,7 +98,7 @@
       "Arlene D. Agao-Agao, LPT.",
       "Mary Ann M. Sabido",
       "Ruby L. Pascua",
-      "Samuel Muyco",
+      "Samuel Sam Muyco",
       "Leonardo O. Betonio",
       "Caryl M. Delgado, MD."
     ],
