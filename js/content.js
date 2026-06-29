@@ -1,5 +1,5 @@
 ﻿/* Content version for caching*/
-const CONTENT_VERSION = "1.2.0";
+const CONTENT_VERSION = "1.0.0";
 
 /* Load wedding content from JSON */
 const getWeddingData = async () => {
