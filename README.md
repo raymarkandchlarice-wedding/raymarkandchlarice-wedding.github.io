@@ -117,3 +117,42 @@ const loadGalleryImages = async (maxImages) => {
 // }
 // });
 // };
+
+
+
+
+
+
+
+"ceremony": [
+      {
+        "role": "Ring Bearer",
+        "people": [
+          "Chlark Nico C. Paquit"
+        ]
+      },
+      {
+        "role": "Candle",
+        "people": [
+          "TBA"
+        ]
+      },
+      {
+        "role": "Cord",
+        "people": [
+          "TBA"
+        ]
+      },
+      {
+        "role": "Veil",
+        "people": [
+          "TBA"
+        ]
+      },
+      {
+        "role": "Bible Bearer",
+        "people": [
+            "TBA"
+        ]
+      }
+    ]

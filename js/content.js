@@ -18,7 +18,7 @@ const getWeddingData = async () => {
 /* Utility for updating page elements */
 const setContentData = (target, attrib, data) => {
   document.querySelectorAll(`[data-content="${target}"]`).forEach(element => {
-    if (attrib === "innerHTML" || attrib === "textContent" || attrib === "value") {
+    if(attrib === "innerHTML" || attrib === "textContent" || attrib === "value") {
       element[attrib] = data;
       return;
     }
@@ -99,8 +99,8 @@ const setPrincipalSponsor = (principalSponsorData) => {
 /* Set wedding party roles and attendants */
 const setWeddingParty = (weddingPartyData) => {
   weddingPartyData.forEach(party => {
-    if(party.main.length === 0){
-      document.getElementById("weddingParty").classList.add("hidden");
+    if(party.main.length === 0) {
+      document.getElementById("weddingParty")?.remove();
       return;
     }
 
@@ -119,6 +119,12 @@ const setWeddingParty = (weddingPartyData) => {
 /* Set ceremony sponsor cards */
 const setCeremonySponsor = (ceremonySponsorData) => {
   const container = document.querySelector('[data-content="ceremony-sponsors"]');
+
+  //remove section
+  if(ceremonySponsorData.length === 0) {
+    document.getElementById("ceremonySponsor")?.remove();
+    return;
+  }
 
   ceremonySponsorData.forEach(sponsor => {
     const div = document.createElement("div");
@@ -219,7 +225,7 @@ const setFAQ = (faqData) => {
 const loadGalleryImages = async (maxImages) => {
   const container = document.querySelector('[data-content="gallery-container"]');
 
-  for(let i = 1; i <= maxImages; i++) {
+  for (let i = 1; i <= maxImages; i++) {
     const div = document.createElement("div");
     const img = new Image();
     img.src = `images/gallery/photo_${i}.jpg?v=${CONTENT_VERSION}`;
@@ -298,8 +304,8 @@ const initContent = async () => {
 };
 
 //Load Script
-if (document.readyState === "loading") {
+if(document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initContent);
 } else {
-  initContent(); // Runs immediately if DOMContentLoaded already happened
+  initContent(); // Runs immediately ifDOMContentLoaded already happened
 }
