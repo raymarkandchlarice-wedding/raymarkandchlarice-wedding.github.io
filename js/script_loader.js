@@ -1,4 +1,4 @@
-const SCRIPT_VERSION = "2.2.0";
+const SCRIPT_VERSION = "2.3.0";
 const scripts = [
     "js/libs/gsap.min.js",
     "js/libs/scrollTrigger.min.js",
