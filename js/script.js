@@ -5,11 +5,11 @@ const getDate = async () => {
       "https://timeapi.io/api/Time/current/zone?timeZone=Asia/Manila"
     );
 
-    if (!res.ok) return null;
+    if(!res.ok) return null;
     const data = await res.json();
     return data.dateTime.slice(0, 23);
   }
-  catch (error) { return null; }
+  catch(error) { return null; }
 }
 
 const getTimeOffset = async () => {
