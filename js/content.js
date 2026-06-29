@@ -1,5 +1,6 @@
 ﻿/* Content version for caching*/
 const CONTENT_VERSION = "1.0.0";
+const GALLERY_IMAGES = 6;
 
 /* Load wedding content from JSON */
 const getWeddingData = async () => {
@@ -8,7 +9,7 @@ const getWeddingData = async () => {
     const data = await response.json();
 
     return data;
-  } 
+  }
   catch (error) {
     console.error("Failed to load JSON:", error);
   }
@@ -17,7 +18,7 @@ const getWeddingData = async () => {
 /* Utility for updating page elements */
 const setContentData = (target, attrib, data) => {
   document.querySelectorAll(`[data-content="${target}"]`).forEach(element => {
-    if(attrib === "innerHTML" || attrib === "textContent" || attrib === "value") {
+    if (attrib === "innerHTML" || attrib === "textContent" || attrib === "value") {
       element[attrib] = data;
       return;
     }
@@ -59,7 +60,7 @@ const reacacheBackgroundImages = (currentVersion) => {
   allBackground.forEach((background) => {
     const source = background.dataset.background;
     const imagePath = `${source}?v=${currentVersion}`;
-    background.style.setProperty("--bg-image",`url("${imagePath}")`);
+    background.style.setProperty("--bg-image", `url("${imagePath}")`);
   });
 }
 
@@ -210,27 +211,18 @@ const setFAQ = (faqData) => {
 };
 
 /* Set gallery images */
-const loadGalleryImages = async(maxImages) => {
+const loadGalleryImages = async (maxImages) => {
   const container = document.querySelector('[data-content="gallery-container"]');
-  const promises = [];
 
-  for (let i = 1; i <= maxImages; i++) {
-    const src = `images/gallery/photo_${i}.jpg?v=${CONTENT_VERSION}`;
-    promises.push(preloadImage(src));
+  for(let i = 1; i <= maxImages; i++) {
+    const div = document.createElement("div");
+    const img = new Image();
+    img.src = `images/gallery/photo_${i}.jpg?v=${CONTENT_VERSION}`;
+    img.alt = "Wedding Gallery Photo";
+    div.className = "img-box image-frame";
+    div.appendChild(img);
+    container.appendChild(div);
   }
-
-  const images = await Promise.allSettled(promises);
-  images.forEach((result) => {
-    if (result.status === "fulfilled") {
-      const img = result.value;
-      img.alt = "Wedding gallery photo";
-
-      const div = document.createElement("div");
-      div.className = "img-box image-frame";
-      div.appendChild(img);
-      container.appendChild(div);
-    }
-  });
 };
 
 /* Set social hashtag and share links */
@@ -266,7 +258,7 @@ const setWeddingDate = (weddingDate) => {
 };
 
 /* Run setup once DOM is ready */
-const initContent =  async () => {
+const initContent = async () => {
   const weddingData = await getWeddingData();
 
   // start wedding countdown
@@ -294,14 +286,14 @@ const initContent =  async () => {
   setSocialHashtag(weddingData.hashtag);
   setSpotifyPlaylist(weddingData.spotifyUrl);
 
-  await loadGalleryImages(6);
+  loadGalleryImages(GALLERY_IMAGES);
 
   document.body.classList.remove("hidden");
   initAnimation();
 };
 
 //Load Script
-if(document.readyState === "loading") {
+if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initContent);
 } else {
   initContent(); // Runs immediately if DOMContentLoaded already happened

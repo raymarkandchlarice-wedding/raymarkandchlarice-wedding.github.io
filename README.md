@@ -17,6 +17,43 @@ Optimize Image
 https://squoosh.app/
 
 
+
+/* Set gallery images */
+const loadGalleryImages = async (maxImages) => {
+  const container = document.querySelector('[data-content="gallery-container"]');
+  // const promises = [];
+
+  for (let i = 1; i <= maxImages; i++) {
+    const src = `images/gallery/photo_${i}.jpg?v=${CONTENT_VERSION}`;
+    const div = document.createElement("div");
+    const img = new Image();
+    img.src = src;
+    div.className = "img-box image-frame";
+    div.appendChild(img);
+    container.appendChild(div);
+  }
+
+
+  // for(let i = 1; i <= maxImages; i++) {
+  //   const src = `images/gallery/photo_${i}.jpg?v=${CONTENT_VERSION}`;
+  //   promises.push(preloadImage(src));
+  // }
+
+  // const images = await Promise.allSettled(promises);
+  // images.forEach((result) => {
+  //   if(result.status === "fulfilled") {
+  //     const img = result.value;
+  //     img.alt = "Wedding gallery photo";
+
+  //     const div = document.createElement("div");
+  //     div.className = "img-box image-frame";
+  //     div.appendChild(img);
+  //     container.appendChild(div);
+  //   }
+  // });
+};
+
+
    <!-- Schedule Timeline Template -->
     <!-- <div class="timeline-item">
       <div class="timeline-time">2:00 PM</div>
