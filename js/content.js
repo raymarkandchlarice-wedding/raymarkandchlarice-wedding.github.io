@@ -266,7 +266,7 @@ const setWeddingDate = (weddingDate) => {
 };
 
 /* Run setup once DOM is ready */
-document.addEventListener("DOMContentLoaded", async () => {
+const initContent =  async () => {
   const weddingData = await getWeddingData();
 
   // start wedding countdown
@@ -298,4 +298,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.body.classList.remove("hidden");
   initAnimation();
-});
+};
+
+//Load Script
+if(document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initContent);
+} else {
+  initContent(); // Runs immediately if DOMContentLoaded already happened
+}

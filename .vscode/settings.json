@@ -9,6 +9,10 @@
         "cmd": "json-minify \"${file}\" > \"${fileDirname}\\wedding-content.min.json\""
       },
       {
+        "match": "script_loader\\.js$",
+        "cmd": "terser \"${file}\" -o \"${fileDirname}\\script_loader.min.js\" -c -m"
+      },
+      {
         "match": "animation\\.js$",
         "cmd": "terser \"${file}\" -o \"${fileDirname}\\animation.min.js\" -c -m"
       },

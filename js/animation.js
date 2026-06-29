@@ -1,4 +1,4 @@
-/* Run on DOMContentLoaded*/
+/* Run on Loaded*/
 const initAnimation = () => {
     gsap.registerPlugin(ScrollTrigger);
 

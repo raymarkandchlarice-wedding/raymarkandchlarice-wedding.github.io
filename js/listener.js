@@ -1,5 +1,5 @@
-/* Run on DOMContentLoaded*/
-document.addEventListener("DOMContentLoaded", async() => {
+/* Run on Loaded*/
+const initListener = async() => {
 
   /* MOBILE MENU */
   const toggle = document.getElementById("menu-toggle");
@@ -95,4 +95,11 @@ document.addEventListener("DOMContentLoaded", async() => {
     });
   });
 
-});
+};
+
+//Load Script
+if(document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initListener);
+} else {
+  initListener(); // Runs immediately if DOMContentLoaded already happened
+}
