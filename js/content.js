@@ -1,5 +1,5 @@
 ﻿/* Content version for caching*/
-const CONTENT_VERSION = "2.4.0";
+const CONTENT_VERSION = "2.5.0";
 const GALLERY_IMAGES = 6;
 
 /* Load wedding content from JSON */
