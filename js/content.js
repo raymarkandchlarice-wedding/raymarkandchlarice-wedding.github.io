@@ -278,6 +278,7 @@ const initContent = async () => {
   // image cache version
   reacacheBackgroundImages(CONTENT_VERSION);
   recacheImages(CONTENT_VERSION);
+  loadGalleryImages(GALLERY_IMAGES);
 
   setWeddingCouple(weddingData.groom, weddingData.bride);
   setCeremonyOfficial(weddingData.officiant);
@@ -296,8 +297,6 @@ const initContent = async () => {
   setFAQ(weddingData.faq);
   setSocialHashtag(weddingData.hashtag);
   setSpotifyPlaylist(weddingData.spotifyUrl);
-
-  loadGalleryImages(GALLERY_IMAGES);
 
   document.body.style.display = "block";
   initAnimation();
