@@ -1,5 +1,14 @@
-const ASSETS_VERSION = "1.3.0";
-const HTML_VERSION = "1.3.0";
+const CONTENT_BUILD_VERSION = "6.30.26" //reache all
+
+//Assets
+const ICON_VERSION = "1.3.0";
+const FONT_VERSION = "1.3.0";
+const STYLE_VERSION = "1.3.0";
+
+//HTML Fragments
+const HTML_HEADER_VERSION = "1.3.0";
+const HTML_MAIN_VERSION = "1.3.0";
+const HTML_FOOTER_VERSION = "1.3.0";
 
 const loadAssets = ({ rel, href, type }) => {
     return new Promise((resolve, reject) => {
@@ -25,23 +34,23 @@ const loadContentHTML = async (contentPath) => {
 const loadWebContent = async () => {
     await loadAssets({
         rel: "icon",
-        href: `/assets/favicon.ico?v=${ASSETS_VERSION}`,
+        href: `/assets/favicon.ico?v=${ICON_VERSION}&${CONTENT_BUILD_VERSION}`,
         type: "image/x-icon"
     });
 
     await loadAssets({
         rel: "stylesheet",
-        href: `assets/fonts/fonts.min.css?v=${ASSETS_VERSION}`
+        href: `assets/fonts/fonts.min.css?v=${FONT_VERSION}&${CONTENT_BUILD_VERSION}`
     });
 
     await loadAssets({
         rel: "stylesheet",
-        href: `css/style.min.css?v=${ASSETS_VERSION}`
+        href: `css/style.min.css?v=${STYLE_VERSION}&${CONTENT_BUILD_VERSION}`
     });
 
-    await loadContentHTML(`content/header.html?v=${HTML_VERSION}`);
-    await loadContentHTML(`content/main_content.html?v=${HTML_VERSION}`);
-    await loadContentHTML(`content/footer.html?v=${HTML_VERSION}`);
+    await loadContentHTML(`content/header.html?v=${HTML_HEADER_VERSION}&${CONTENT_BUILD_VERSION}`);
+    await loadContentHTML(`content/main_content.html?v=${HTML_MAIN_VERSION}&${CONTENT_BUILD_VERSION}`);
+    await loadContentHTML(`content/footer.html?v=${HTML_FOOTER_VERSION}&${CONTENT_BUILD_VERSION}`);
 
     console.log("Website content loaded");
 }
