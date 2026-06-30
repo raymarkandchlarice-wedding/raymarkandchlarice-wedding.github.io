@@ -95,6 +95,13 @@ const initListener = async() => {
     });
   });
 
+  //qr code listener
+  document.querySelectorAll(".details-qr img")
+  .forEach((qr) => {
+    const parent = qr.closest(".details-qr");
+    qr.addEventListener("load", () => parent.classList.remove("hidden"));
+    qr.addEventListener("error", () => parent.classList.add("hidden"));
+  });
 };
 
 //Load Script
