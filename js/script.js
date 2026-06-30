@@ -25,7 +25,7 @@ const updateCountdown = (weddingDate, timeOffset) => {
   const now = new Date(Date.now() + timeOffset);
   const gap = weddingDate - now;
 
-  if (gap <= 0) {
+  if(gap <= 0) {
     countdownEl.classList.add("hidden");
     finishedEl.classList.remove("hidden");
     return;
