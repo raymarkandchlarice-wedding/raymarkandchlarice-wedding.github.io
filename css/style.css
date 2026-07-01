@@ -455,12 +455,20 @@
  }
 
  @media (max-width: 767.98px) {
+   .hero .hero-weds {
+     font-size: 1.5rem;
+   }
+
    .hero h1 {
      font-size: 4rem;
    }
  }
 
  @media (max-width: 575.98px) {
+
+   .hero .hero-weds {
+     font-size: 1.2rem;
+   }
 
    .countdown-finished {
      padding: 12px 18px;
